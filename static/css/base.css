@@ -88,6 +88,59 @@ html {
     width: 1.5rem;
 }
 
+/* ------ footer ------ */
+
+footer{
+    margin-top: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    display: contents;
+}
+
+.footer-bg {
+    background-color: #050316;
+    color: #fff;
+}
+
+.footer-link{
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer-link:hover{
+    text-decoration: none;
+    color: #443dff;
+}
+
+.footer-social-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footer-social-links a {
+    color: #fff;
+}
+
+.footer-social-links a:hover {
+    color: #443dff;
+}
+
+ul.fa-ul{
+    margin-left: 0;
+}
+
+.open-hours{
+    color: #fff;
+    font-weight: 600;
+}
+
+.footer-copyright{
+    color: #fff;
+    max-width: 100%;
+}
+
 /* ------ Hero Section ------ */
 
 .hero-container {
