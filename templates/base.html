@@ -165,6 +165,20 @@
     document.querySelector('#search-icon').onclick = () => {
       search.classList.toggle('active');
     }
+
+    // Listens for scroll event
+    document.addEventListener("DOMContentLoaded", function () {
+      window.addEventListener("scroll", function () {
+        var navbar = document.getElementById("outer-nav");
+
+        // Add active class to nav background if page scrolled
+        if (window.scrollY > 0) {
+          navbar.classList.add("active");
+        } else {
+          navbar.classList.remove("active");
+        }
+      });
+    });
   </script>
   {% endblock %}
 
