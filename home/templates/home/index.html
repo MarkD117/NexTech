@@ -1,6 +1,22 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
-    <h1 class="display-4 text-success">Test</h1>
+    <video autoplay loop muted plays-inline disablePictureInPicture controlsList="nodownload" class="bg-video">
+        <source src="{{ MEDIA_URL }}hero-bg-video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-container">
+        <div class="hero-content">
+            <h1>NexTech</h1>
+            <a href="#">Explore</a>
+        </div>
+    </div>
 {% endblock %}
