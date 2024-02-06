@@ -21,6 +21,22 @@ html {
     color: white;
 }
 
+.navbar-bg {
+    background-color: rgba(0, 0, 0, 0.3)
+}
+
+.navbar-bg.active {
+    background-color: #2f27ce;
+    transition: background-color 0.3s ease;
+}
+
+#desktop-nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
 .search-box {
     position: absolute;
     border-radius: 20px;
