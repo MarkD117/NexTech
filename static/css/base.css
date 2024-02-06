@@ -8,6 +8,8 @@ html {
     height: 100%;
 }
 
+/* ------ Nav Section ------ */
+
 .main-logo-link {
     width: fit-content;
 }
@@ -86,6 +88,8 @@ html {
     width: 1.5rem;
 }
 
+/* ------ Hero Section ------ */
+
 .hero-container {
     width: 100%;
     height: 100vh;
@@ -127,7 +131,7 @@ html {
     z-index: -1;
 }
 
-/* -------------------------------- Media Queries */
+/* ------ Media Queries ------ */
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
@@ -151,6 +155,7 @@ html {
     } */
 }
 
+/* Reduce nav link sizes on smaller screens */
 @media (max-width: 991px) {
     body {
         height: calc(100vh - 116px);
