@@ -203,6 +203,21 @@ ul.fa-ul{
 .product-heading-hr {
     height: 3px;
     background-color: #443dff;
+    border-radius: 5px;
+}
+
+a.category-button > span.badge {
+    color: #fbfbfe;
+    background: #2f27ce;
+    border: 2px solid #2f27ce;
+    border-radius: 20px;
+}
+
+a.category-button > span.badge:hover {
+    color: #050316;
+    background: #dddbff;
+    border: 2px solid #2f27ce;
+    transition: 0.2s all linear;
 }
 
 .product-card {
