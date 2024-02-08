@@ -188,7 +188,7 @@ ul.fa-ul{
     z-index: -1;
 }
 
-/* ------ Products Pages ------ */
+/* ------ Products Page ------ */
 
 /* .page-overlay {
     height: 100%;
@@ -216,6 +216,30 @@ ul.fa-ul{
     height: 380px; 
     object-fit: cover;
 } */
+
+/* ------ Product Detail Page ------ */
+
+.stock-tag {
+    display: flex;
+    justify-content: center;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    width: 100px;
+    margin: 5px 0;
+}
+
+.in-stock {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.not-in-stock {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    width: 120px;
+}
 
 /* ------ Media Queries ------ */
 
