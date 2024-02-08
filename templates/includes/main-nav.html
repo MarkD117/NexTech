@@ -38,10 +38,10 @@
             Systems
         </a>
         <div class="dropdown-menu border-0" aria-labelledby="systems-link">
-            <a href="" class="dropdown-item">Full Tower</a>
-            <a href="" class="dropdown-item">Laptops</a>
-            <a href="" class="dropdown-item">HTPC</a>
-            <a href="" class="dropdown-item">All Systems</a>
+            <a href="{% url 'products' %}?category=full_tower" class="dropdown-item">Full Tower</a>
+            <a href="{% url 'products' %}?category=laptops" class="dropdown-item">Laptops</a>
+            <a href="{% url 'products' %}?category=htpc" class="dropdown-item">HTPC</a>
+            <a href="{% url 'products' %}?category=full_tower,laptops,htpc" class="dropdown-item">All Systems</a>
         </div>
     </li>
     <!-- Offers Dropdown -->
@@ -51,10 +51,10 @@
             Offers
         </a>
         <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-            <a href="" class="dropdown-item">New Arrivals</a>
-            <a href="" class="dropdown-item">Deals</a>
-            <a href="" class="dropdown-item">Clearance</a>
-            <a href="" class="dropdown-item">All Offers</a>
+            <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
+                <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
+                <a href="{% url 'products' %}?category=clearance" class="dropdown-item">Clearance</a>
+                <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="dropdown-item">All Offers</a>
         </div>
     </li>
 </ul>
