@@ -15,6 +15,12 @@
         <div class="row">
             <div class="col text-center text-uppercase mt-3">
                 <h2 style="font-weight: 600;">Products</h2>
+                <!-- displays clickable categories with list of current categories -->
+                {% for c in current_categories %}
+                    <a class="category-button text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
+                        <span class="p-2 my-2 badge badge-white">{{ c.friendly_name }}</span>
+                    </a>
+                {% endfor %}
                 <hr class="w-25 mb-1 mx-auto product-heading-hr">
             </div>
         </div>
