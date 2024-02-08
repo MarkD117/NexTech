@@ -207,9 +207,9 @@ ul.fa-ul{
         z-index: 1030;
     }
 
-    /* .header-container {
-        padding-top: 164px;
-    } */
+    .header-container {
+        padding-top: 82px;
+    }
 }
 
 /* Reduce nav link sizes on smaller screens */
