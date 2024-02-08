@@ -188,7 +188,44 @@ ul.fa-ul{
     z-index: -1;
 }
 
+/* ------ Products Pages ------ */
+
+/* .page-overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: #fbfbfe;
+    z-index: -1;
+} */
+
+.product-heading-hr {
+    height: 3px;
+    background-color: #443dff;
+}
+
+.product-card {
+    padding: 15px;
+    background: #dddbff;
+    border-radius: 20px;
+}
+
+/* Sets all images the same height avoiding distortion */
+/* .card-img-top {
+    height: 380px; 
+    object-fit: cover;
+} */
+
 /* ------ Media Queries ------ */
+
+@media (max-width: 1430px) {
+    /* .card-img-top {
+        height: 300px; 
+    } */
+}
+
+
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
@@ -214,6 +251,11 @@ ul.fa-ul{
 
 /* Reduce nav link sizes on smaller screens */
 @media (max-width: 991px) {
+
+    .header-container {
+        padding-top: 70px;
+    }
+
     body {
         height: calc(100vh - 116px);
     }
@@ -269,4 +311,8 @@ ul.fa-ul{
         font-size: 16px;
         padding: 8px 62px;
     }
+
+    /* .card-img-top {
+        height: 250px; 
+    } */
 }
