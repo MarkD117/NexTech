@@ -296,6 +296,20 @@ a.category-button > span.badge:hover {
     width: 120px;
 }
 
+/* ------ Cart ------ */
+
+.keep-shopping-btn {
+    color: #fbfbfe;
+    background: #443dff;
+    border: 2px solid #443dff;
+}
+
+.keep-shopping-btn:hover {
+    color: #fbfbfe;
+    background: #2f27ce;
+    border: 2px solid #2f27ce;
+}
+
 /* ------ Media Queries ------ */
 
 @media (max-width: 1430px) {
