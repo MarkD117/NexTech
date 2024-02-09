@@ -49,13 +49,13 @@
     </nav>
     <div class="row py-lg-2 d-none d-lg-flex">
       <!-- Main logo column -->
-      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+      <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 text-center text-lg-left">
         <a href="{% url 'home' %}" class="nav-link main-logo-link">
           <img src="{{ MEDIA_URL }}logo.jpg" alt="NexTech Logo" width="50" height="50" style="border-radius: 30px;">
         </a>
       </div>
       <!-- Main desktop nav -->
-      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+      <div class="col-12 col-lg-5 my-auto py-1 py-lg-0">
         <div id="desktop-nav">
           {% include 'includes/main-nav.html' %}
         </div>
@@ -117,7 +117,7 @@
     </div>
     <!-- Desktop Search Bar -->
     <div class="row d-none d-lg-flex">
-      <form class="form" method="GET" action="{% url 'products' %}">
+      <form class="form border" method="GET" action="{% url 'products' %}">
         <div class="input-group search-box">
           <input class="form-control" type="text" name="q" placeholder="Search our site">
           <div class="input-group-append">
