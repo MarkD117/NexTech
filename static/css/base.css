@@ -315,6 +315,11 @@ a.category-button > span.badge:hover {
     border: 2px solid #2f27ce;
 }
 
+.checkout-btn:hover {
+    color: #fbfbfe !important;
+    background: #050316e1 !important;
+}
+
 /* ------ Media Queries ------ */
 
 @media (max-width: 1430px) {
