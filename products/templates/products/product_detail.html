@@ -51,6 +51,55 @@
                     </div>
                     {% endif %}
                     <p class="mt-3">{{ product.description }}</p>
+                    <div class="center-quantity-form">
+                        <form class="form mx-auto" action="" method="POST">
+                            {% csrf_token %}
+                            <div class="form-row">
+                                <div class="col-12">
+                                    <p class="mt-3"><strong>Quantity:</strong></p>
+                                    <div class="form-group w-75 center-quantity-selector">
+                                        <!-- Input group controls the quantity of item the user wants to purchase -->
+                                        <div class="input-group input-group-{{ product.id }}">
+                                            <!-- Increase quantity button -->
+                                            <div class="input-group-prepend">
+                                                <button class="decrement-qty btn btn-black rounded-0 decrement-qty_{{ product.id }}" 
+                                                    data-item_id="{{ product.id }}">
+                                                    <span class="icon">
+                                                        <i class="fas fa-minus"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                            <input class="form-control border qty_input id_qty_{{ product.id }}" type="number"
+                                                name="quantity" value="1" min="1" max="99"
+                                                data-item_id="{{ product.id }}">
+                                            <!-- Decrease quantity button -->
+                                            <div class="input-group-append">
+                                                <button class="increment-qty btn btn-black rounded-0 increment-qty_{{ product.id }}"
+                                                data-item_id="{{ product.id }}">
+                                                    <span class="icon">
+                                                        <i class="fas fa-plus"></i>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col{% if s %}-12 mt{% endif %}">
+                                    <!-- Keep shopping button links back to the products page -->
+                                    <a href="{% url 'products' %}" class="btn btn-blue rounded-pill mt-5">
+                                        <span class="icon">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </span>
+                                        <span class="text-uppercase">Keep Shopping</span>
+                                    </a>
+                                    <!-- Submit form button -->
+                                    <input type="submit" class="btn btn-blue rounded-pill text-uppercase mt-5" value="Add to cart">
+                                </div>
+                                <!-- Hidden input sends current url to view to redirect user to same page after adding to cart -->
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

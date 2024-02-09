@@ -296,15 +296,20 @@ a.category-button > span.badge:hover {
     width: 120px;
 }
 
+.btn-black {
+    background: #050316;
+    color: #fbfbfe;
+}
+
 /* ------ Cart ------ */
 
-.keep-shopping-btn {
+.btn-blue {
     color: #fbfbfe;
     background: #443dff;
     border: 2px solid #443dff;
 }
 
-.keep-shopping-btn:hover {
+.btn-blue:hover {
     color: #fbfbfe;
     background: #2f27ce;
     border: 2px solid #2f27ce;
@@ -367,6 +372,19 @@ a.category-button > span.badge:hover {
 
     .hero-content h1 {
         font-size: 140px;
+    }
+}
+
+@media (max-width: 767px) {
+    
+    /* Centers quantity form on smaller screens */
+    .center-quantity-form {
+        text-align: center;
+    }
+
+    .center-quantity-selector {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
