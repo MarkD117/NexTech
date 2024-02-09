@@ -257,6 +257,21 @@ a.category-button > span.badge:hover {
     object-fit: cover;
 } */
 
+.top-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    color: #fbfbfe;
+    background: #2f27ce;
+    border: 2px solid #2f27ce;
+}
+
+.top-link {
+    cursor: pointer;
+}
+
 /* ------ Product Detail Page ------ */
 
 .stock-tag {

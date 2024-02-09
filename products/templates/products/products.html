@@ -96,10 +96,23 @@
             </div>
         </div>
     </div>
+    <!-- Back to top button -->
+    <div class="top-button rounded-circle shadow">
+        <a class="top-link d-flex h-100 text-white text-decoration-none">
+            <i class="fas fa-arrow-up mx-auto my-auto"></i>
+        </a>	
+    </div>
 {% endblock %}
 <!-- Add below js to base template -->
 {% block postloadjs %}
     {{ block.super }}
+    <!-- When back to top button clicked, window scrolls to top -->
+    <script type="text/javascript">
+		$('.top-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+	</script>
+
     <!-- Splits selected sorting option and displays products based on sort type and direction -->
     <script type="text/javascript">
         $('#sort-selector').change(function() {
