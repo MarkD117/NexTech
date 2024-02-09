@@ -43,6 +43,32 @@ body {
     flex-direction: row;
 }
 
+input.form-control.desktop-search-bar {
+    border-top: 0.1px solid #7c7c7c;
+    border-left: 0.1px solid #7c7c7c;
+    border-bottom: 0.1px solid #7c7c7c;
+}
+
+.desktop-search-bar-button {
+    border-top: 0.1px solid #7c7c7c;
+    border-right: 0.1px solid #7c7c7c;
+    border-bottom: 0.1px solid #7c7c7c;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.border-gray {
+    border: 0.1px solid #7c7c7c !important;
+}
+
+.no-left-border {
+    border-left: none !important;
+}
+
+.no-right-border {
+    border-right: none !important;
+}
+
 .search-box {
     position: absolute;
     border-radius: 20px;
@@ -60,8 +86,6 @@ body {
 
 .search-box input {
     padding: 20px;
-    border: none;
-    outline: none;
     width: 100%;
     font-size: 1rem;
     color: black;
