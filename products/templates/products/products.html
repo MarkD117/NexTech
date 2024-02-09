@@ -97,3 +97,33 @@
         </div>
     </div>
 {% endblock %}
+<!-- Add below js to base template -->
+{% block postloadjs %}
+    {{ block.super }}
+    <!-- Splits selected sorting option and displays products based on sort type and direction -->
+    <script type="text/javascript">
+        $('#sort-selector').change(function() {
+            var selector = $(this);
+            var currentUrl = new URL (window.location);
+
+            var selectedVal = selector.val();
+            if(selectedVal != "reset"){
+                var sort = selectedVal.split("_")[0];
+                var direction = selectedVal.split('_')[1];
+
+                // Replace GET parameters in url with searchParams.set() method
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
+
+                window.location.replace(currentUrl);
+            // If user has selected the reset option
+            } else {
+                // Delete sort and get parameters
+                currentUrl.searchParams.delete("sort");
+                currentUrl.searchParams.delete("direction");
+
+                window.location.replace(currentUrl)
+            }
+        })
+    </script>
+{% endblock %}
