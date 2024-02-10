@@ -45,7 +45,7 @@
 
 <body>
   <!-- Navbar -->
-  <header class="container-fluid fixed-top navbar-bg" id="outer-nav">
+  <header class="container-fluid fixed-top {% if is_home_page %}navbar-bg{% else %}solid-bg{% endif %}" id="outer-nav">
     </nav>
     <div class="row py-lg-2 d-none d-lg-flex">
       <!-- Main logo column -->

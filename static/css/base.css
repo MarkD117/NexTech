@@ -27,6 +27,10 @@ body {
     color: white;
 }
 
+.solid-bg {
+    background-color: #2f27ce;
+}
+
 .navbar-bg {
     background-color: rgba(0, 0, 0, 0.3)
 }
