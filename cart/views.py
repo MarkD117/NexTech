@@ -50,7 +50,7 @@ def update_cart(request, item_id):
     request.session['cart'] = cart
     return redirect(reverse('view_cart'))
 
-def remove_from_cart(request, item_id):
+def remove_cart_item(request, item_id):
     """ This view handles the removal of cart items """
     # Try except block to catch errors
     try:
