@@ -87,7 +87,7 @@
                                     </button>
                                 </td>
                                 <td class="py-3">
-                                    <p class="my-0"><strong>${{ item.product.price }}</strong></p>
+                                    <p class="my-0"><strong>${{ item.product.price | calc_subtotal:item.quantity }}</strong></p>
                                 </td>
                             </tr>
                         {% endfor %}
