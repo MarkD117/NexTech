@@ -51,15 +51,17 @@ def update_cart(request, item_id):
     return redirect(reverse('view_cart'))
 
 def remove_from_cart(request, item_id):
-    """ Remove the item from the shopping cart """
-    
+    """ This view handles the removal of cart items """
+    # Try except block to catch errors
     try:
+        # Gets product to be deleted and pops out of cart session
         product = get_object_or_404(Product, pk=item_id)
         cart = request.session.get('cart', {})
         cart.pop(item_id)
-            
+
         request.session['cart'] = cart
         return HttpResponse(status=200)
-
+    
+    # return any errors
     except Exception as e:
         return HttpResponse(status=500)
