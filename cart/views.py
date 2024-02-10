@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from products.models import Product
 
 
 def view_cart(request):
@@ -21,10 +22,31 @@ def add_to_cart(request, item_id):
     # If item already in cart, increment quantity
     if item_id in list(cart.keys()):
         cart[item_id] += quantity
-    # Add item to bag
+    # Add item to cart
     else:
         cart[item_id] = quantity
 
     # overwriting cart variable in session
     request.session['cart'] = cart
     return redirect(redirect_url)
+
+
+def update_cart(request, item_id):
+    """ This view updates the quantity of the 
+        selected product to the specified amount """
+    
+    product = get_object_or_404(Product, pk=item_id)
+    quantity = int(request.POST.get('quantity'))
+    cart = request.session.get('cart', {})
+
+
+    if quantity > 0:
+        # Set quantity value to updated quantity
+        cart[item_id] = quantity
+    else:
+        # Removes item entirely by using pop function
+        cart.pop(item_id)
+        
+    request.session['cart'] = cart
+    return redirect(reverse('view_cart'))
+
