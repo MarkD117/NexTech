@@ -49,7 +49,7 @@
                                     <p class=""><strong>Quantity:</strong></p>
                                     <form class="form update-form" method="POST" action="">
                                         {% csrf_token %}
-                                        <div class="form-group border w-50">
+                                        <div class="form-group border w-25">
                                             <div class="input-group input-group-{{ item.item_id }}">
                                                 <div class="input-group-prepend">
                                                     <button class="decrement-qty btn btn-black rounded-0 decrement-qty_{{ item.item_id }} 
@@ -76,11 +76,13 @@
                                             </div>
                                         </div>
                                     </form>
-                                    <button class="btn btn-sm btn-primary rounded-pill">
+                                    <button class="btn btn-sm btn-primary rounded-pill">                                        
                                         <a class="update-link text-white text-decoration-none"><small>Update</small></a>
+                                        <i class="fa-solid fa-rotate-right"></i>
                                     </button>
-                                    <button class="btn btn-sm btn-danger rounded-pill">
+                                    <button class="btn btn-sm btn-danger rounded-pill">                                        
                                         <a class="remove-item text-white text-decoration-none" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                                        <i class="fa-solid fa-trash-can"></i>
                                     </button>
                                 </td>
                                 <td class="py-3">
