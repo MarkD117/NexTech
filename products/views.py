@@ -40,7 +40,7 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any seach criteria!")
+                messages.error(request, "Please enter a keyword or phrase to initiate the search!")
                 return redirect(reverse('products'))
             
             # Allowing queries to be filtered based on name OR description
