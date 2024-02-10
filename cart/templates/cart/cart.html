@@ -76,6 +76,12 @@
                                             </div>
                                         </div>
                                     </form>
+                                    <button class="btn btn-sm btn-primary rounded-pill">
+                                        <a class="update-link text-white text-decoration-none"><small>Update</small></a>
+                                    </button>
+                                    <button class="btn btn-sm btn-danger rounded-pill">
+                                        <a class="remove-item text-white text-decoration-none" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                                    </button>
                                 </td>
                                 <td class="py-3">
                                     <p class="my-0"><strong>${{ item.product.price }}</strong></p>
@@ -141,4 +147,9 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}
