@@ -148,7 +148,22 @@
 
 
   {% if messages %}
-  <div class="message-container"></div>
+  <div class="message-container rounded">
+    {% for message in messages %}
+        <!-- Using djang message levels to display correct message type -->
+        {% with message.level as level %}
+            {% if level == 40 %}
+                {% include 'includes/toasts/toast_error.html' %}
+            {% elif level == 30 %}
+                {% include 'includes/toasts/toast_warning.html' %}
+            {% elif level == 25 %}
+                {% include 'includes/toasts/toast_success.html' %}
+            {% else %}
+                {% include 'includes/toasts/toast_info.html' %}
+            {% endif %}
+        {% endwith %}
+    {% endfor %}
+  </div>
   {% endif %}
 
   {% block page_header %}
@@ -263,6 +278,10 @@
 
   {% block postloadjs %}
   <script type="text/javascript">
+
+    // Shows all toasts rendered in messages container
+    $('.toast').toast('show');
+
     // Displays search box when search icon is clicked
     let search = document.querySelector('.search-box');
 
