@@ -47,7 +47,7 @@
                                     <p class="small text-muted">SKU: {{ item.product.sku|upper }}</p>
                                     <p class=""><strong>Unit Price: </strong>${{ item.product.price }}</p>
                                     <p class=""><strong>Quantity:</strong></p>
-                                    <form class="form update-form" method="POST" action="">
+                                    <form class="form update-form" method="POST" action="{% url 'update_cart' item.item_id %}">
                                         {% csrf_token %}
                                         <div class="form-group border w-25">
                                             <div class="input-group input-group-{{ item.item_id }}">
