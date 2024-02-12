@@ -15,6 +15,7 @@
 
 {% block content %}
     <div class="container">
+        <!-- Heading Row -->
         <div class="row">
             <div class="col-12 col-lg-8 offset-lg-2">
                 <hr>
@@ -23,6 +24,7 @@
                 <p>Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
             </div>
         </div>
+        <!-- Order Summary Row -->
         <div class="row">
             <div class="col-12 col-lg-8 offset-lg-2">
                 <div class="order-confirmation-wrapper p-2 border">
@@ -39,7 +41,6 @@
                             <small>{{ order.order_number }}</small>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <small class="mobile-bold-font">Order Date:</small>
@@ -48,13 +49,14 @@
                             <small>{{ order.date }}</small>
                         </div>
                     </div>
-
+                    <!-- Order Details -->
                     <div class="row my-3">
                         <div class="col">
                             <p class="my-0 font-weight-bold">Order Details</p>
                         </div>
                     </div>
                     <hr class="mt-0">
+                    <!-- Product Information -->
                     {% for item in order.lineitems.all %}
                     <div class="row">
                         <div class="col-12 col-lg-3 col-md-4 mb-1">
@@ -77,6 +79,7 @@
                     </div>
                     <hr>
                     {% endfor %}
+                    <!-- Delivery Information -->
                     <div class="row">
                         <div class="col">
                             <p class="my-0 font-weight-bold">Delivery Info</p>
@@ -90,7 +93,6 @@
                             <small>{{ order.full_name }}</small>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <small class="mobile-bold-font">Address 1:</small>
@@ -99,7 +101,6 @@
                             <small>{{ order.street_address1 }}</small>
                         </div>
                     </div>
-
                     {% if order.street_address2 %}
                     <div class="row">
                         <div class="col-12 col-md-4">
@@ -110,7 +111,6 @@
                         </div>
                     </div>
                     {% endif %}
-
                     {% if order.county %}
                     <div class="row">
                         <div class="col-12 col-md-4">
@@ -121,7 +121,6 @@
                         </div>
                     </div>
                     {% endif %}
-
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <small class="mobile-bold-font">Town or City:</small>
@@ -130,7 +129,6 @@
                             <small>{{ order.town_or_city }}</small>
                         </div>
                     </div>
-
                     {% if order.postcode %}
                     <div class="row">
                         <div class="col-12 col-md-4">
@@ -141,7 +139,6 @@
                         </div>
                     </div>
                     {% endif %}
-
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <small class="mobile-bold-font">Country:</small>
@@ -150,7 +147,6 @@
                             <small>{{ order.country }}</small>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <small class="mobile-bold-font">Phone Number:</small>
@@ -159,13 +155,12 @@
                             <small>{{ order.phone_number }}</small>
                         </div>
                     </div>
-
+                    <!-- Billing Information -->
                     <div class="row">
                         <div class="col">
                             <p class="my-0 font-weight-bold">Billing Info</small>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <small class="mobile-bold-font">Order Total:</small>
@@ -174,7 +169,6 @@
                             <small>${{ order.order_total }}</small>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <small class="mobile-bold-font">Delivery:</small>
@@ -187,7 +181,6 @@
                             {% endif %}
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-12 col-md-4">
                             <small class="mobile-bold-font">Grand Total:</small>
@@ -199,6 +192,7 @@
                 </div>
             </div>
         </div>
+        <!-- Deals Link -->
         <div class="row my-3">
 			<div class="col-12 text-center">
                 <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="btn btn-blue rounded-pill my-2 pr-3">
