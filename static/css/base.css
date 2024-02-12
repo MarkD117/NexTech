@@ -395,6 +395,11 @@ a.category-button > span.badge:hover {
     .hero-content h1 {
         font-size: 140px;
     }
+
+    .btn.btn-blue,
+    .btn.btn-black {
+        padding: .375rem .375rem !important;
+    }
 }
 
 @media (max-width: 767px) {

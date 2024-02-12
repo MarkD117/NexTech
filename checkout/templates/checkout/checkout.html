@@ -117,27 +117,31 @@
                     </fieldset>
 
                     <div class="submit-button text-right mt-5 mb-2">
-                        <!-- Link back to shopping cart -->
-                        <a href="{% url 'view_cart' %}" class="btn btn-blue pr-4 rounded-pill">
-                            <span class="icon">
-                                <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="font-weight-bold">Back to Cart</span>
-                        </a>
-                        <!-- Submit button -->
-                        <button id="submit-button" class="btn btn-black pl-4 rounded-pill">
-                            <span class="font-wight-bold">Complete Order</span>
-                            <span class="icon">
-                                <i class="fa-solid fa-bag-shopping"></i>
-                            </span>
-                        </button>
-                        <!-- Notification alerting user their card will be charged -->
-                        <p class="small text-danger my-0">
-                            <span class="icon">
-                                <i class="fas fa-exclamation-circle"></i>
-                            </span>
-                            <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
-                        </p>
+                        <div class="d-flex justify-content-center">
+                            <!-- Link back to shopping cart -->
+                            <a href="{% url 'view_cart' %}" class="btn btn-blue mr-2 mb-2 pr-4 rounded-pill">
+                                <span class="icon">
+                                    <i class="fas fa-chevron-left"></i>
+                                </span>
+                                <span class="font-weight-bold">Back to Cart</span>
+                            </a>
+                            <!-- Submit button -->
+                            <button id="submit-button" class="btn btn-black ml-2 mb-2 pl-4 rounded-pill">
+                                <span class="font-wight-bold">Complete Order</span>
+                                <span class="icon">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <!-- Notification alerting user their card will be charged -->
+                            <p class="small text-danger my-0">
+                                <span class="icon">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                </span>
+                                <span>Your card will be charged <strong>${{ grand_total|floatformat:2 }}</strong></span>
+                            </p>
+                        </div>
                     </div>
                 </form>
             </div>
