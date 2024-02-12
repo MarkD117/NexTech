@@ -130,7 +130,8 @@ footer{
     display: contents;
 }
 
-.footer-bg {
+.footer-container {
+    margin-top: 80px;
     background-color: #050316;
     color: #fff;
 }
