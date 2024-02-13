@@ -22,7 +22,6 @@ class OrderForm(forms.ModelForm):
             'full_name': 'Full Name',
             'email': 'Email Address',
             'phone_number': 'Phone Number',
-            'country': 'Country',
             'postcode': 'Postal Code',
             'town_or_city': 'Town or City',
             'street_address1': 'Street Address 1',
@@ -35,12 +34,16 @@ class OrderForm(forms.ModelForm):
         # Iterate through form fields and add a '*' to the
         # placeholder field is required field on the model
         for field in self.fields:
-            if self.fields[field].required:
-                placeholder = f'{placeholders[field]} *'
-            else:
-                placeholder = placeholders[field]
-            # Sets all placeholders to values in dictionary above
-            self.fields[field].widget.attrs['placeholder'] = placeholder
+            # Country field asterisk set on model. If statement
+            # prevents the below code from throwing an error as
+            # country field is not specified in above dictionary.
+            if field != 'country':
+                if self.fields[field].required:
+                    placeholder = f'{placeholders[field]} *'
+                else:
+                    placeholder = placeholders[field]
+                # Sets all placeholders to values in dictionary above
+                self.fields[field].widget.attrs['placeholder'] = placeholder
             # Add custom css class
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             # Remove form field labels as custom placeholders are set
