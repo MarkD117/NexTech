@@ -37,11 +37,19 @@
   border-radius: 10px;
 }
 
-@media (max-width: 767px) {
-  /* Applies bold font to headings on mobile layout */
-  .mobile-bold-font {
-    font-weight: bold;
-  }
+/* Set all select elements and their option children to be black by default */
+
+select,
+select option {
+    color: #050316;
+}
+
+/* Set the select box to grey if it is invalid (i.e. nothing selected) */
+/* Set the default blank option value provided by the model to grey  */
+
+select:invalid,
+select option[value=""] {
+    color: #aab7c4 !important;
 }
 
 /* ------ Loading Overlay Page ------ */
@@ -63,4 +71,11 @@
   justify-content: center;
   margin: 0;
   height: 100%;
+}
+
+@media (max-width: 767px) {
+  /* Applies bold font to headings on mobile layout */
+  .mobile-bold-font {
+    font-weight: bold;
+  }
 }
