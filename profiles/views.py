@@ -1,22 +1,31 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
-
+from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm
 
 from checkout.models import Order
 
+
+@login_required
 def profile(request):
     """ Display the user's profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
 
+    # If request method is post, create a new instance
+    # of the user profile form using the post data
     if request.method == 'POST':
+        # instance that is being updated is the profile retrieved above
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile updated successfully')
-
-    form = UserProfileForm(instance=profile)
+        else:
+            messages.error(request, 'Update failed. Please ensure the form is valid.')
+    else:
+        form = UserProfileForm(instance=profile)
+    # The profile and the related name on the order model are used to
+    # get the users orders and we then return those to the template.
     orders = profile.orders.all()
 
     template = 'profiles/profile.html'
@@ -30,17 +39,38 @@ def profile(request):
 
 
 def order_history(request, order_number):
+    # Get order
     order = get_object_or_404(Order, order_number=order_number)
 
+    # Message letting user know they are looking at a past order confirmation
     messages.info(request, (
         f'This is a past confirmation for order number {order_number}. '
         'A confirmation email was sent on the order date.'
     ))
 
+    # Uses template for checkout success confirmation as layout
+    # is already set up for rendering a nice order confirmation.
     template = 'checkout/checkout_success.html'
     context = {
         'order': order,
+        # Variable added to context to check in template
+        # if the user arrived via the order history view
         'from_profile': True,
     }
 
     return render(request, template, context)
+
+
+# def upload_profile_picture(request):
+#     if request.method == 'POST':
+#         form = ProfilePictureForm(request.POST, request.FILES, instance=request.user.userprofile)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('profile')
+#     else:
+#         form = ProfilePictureForm()
+
+#     context = {
+#         'form': 'form'
+#     }
+#     return render(request, 'profiles/upload_profile_picture.html', context)
