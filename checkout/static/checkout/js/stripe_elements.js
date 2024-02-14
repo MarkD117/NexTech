@@ -6,10 +6,15 @@
     https://stripe.com/docs/stripe-js
 */
 
+/*
+    getting 'public key' and 'client secret' from template slicing off
+    the first and last character of each removing the quotation marks
+*/
 var stripePublicKey = $('#id_stripe_public_key').text().slice(1, -1);
 var clientSecret = $('#id_client_secret').text().slice(1, -1);
 var stripe = Stripe(stripePublicKey);
 var elements = stripe.elements();
+// Basic styles for the card
 var style = {
     base: {
         color: '#050316',
@@ -25,6 +30,7 @@ var style = {
         iconColor: '#dc3545'
     }
 };
+// Create card element
 var card = elements.create('card', {style: style});
 card.mount('#card-element');
 
@@ -52,9 +58,10 @@ form.addEventListener('submit', function(ev) {
     ev.preventDefault();
     card.update({ 'disabled': true});
     $('#submit-button').attr('disabled', true);
-    // Triggers loading overlay
     $('#payment-form').fadeToggle(100);
     $('#loading-overlay').fadeToggle(100);
+
+    // Check if save info box selected
     var saveInfo = Boolean($('#id-save-info').attr('checked'));
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
@@ -62,12 +69,15 @@ form.addEventListener('submit', function(ev) {
         'client_secret': clientSecret,
         'save_info': saveInfo,
     };
-    var url = '/checkout/cache_checkout_data/';
 
+    var url = '/checkout/cache_checkout_data/';
+    
+    // Post the post data above to the view.
     $.post(url, postData).done(function () {
         stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: card,
+                // Add form data to payment intent
                 billing_details: {
                     name: $.trim(form.full_name.value),
                     phone: $.trim(form.phone_number.value),
@@ -95,6 +105,7 @@ form.addEventListener('submit', function(ev) {
             },
 
         }).then(function(result) {
+            // Checkfor error and diplay message
             if (result.error) {
                 var errorDiv = document.getElementById('card-errors');
                 var html = `
@@ -113,6 +124,7 @@ form.addEventListener('submit', function(ev) {
                 }
             }
         });
+    // Fail if view sends a 400 bad request response
     }).fail(function () {
         location.reload();
     })
