@@ -12,6 +12,11 @@ body {
     background-color: #fbfbfe;
 }
 
+.heading-font {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
 /* ------ Nav Section ------ */
 
 .main-logo-link {
@@ -51,6 +56,7 @@ input.form-control.desktop-search-bar {
     border-top: 0.1px solid #7c7c7c;
     border-left: 0.1px solid #7c7c7c;
     border-bottom: 0.1px solid #7c7c7c;
+    border-right: none;
 }
 
 .desktop-search-bar-button {
@@ -79,7 +85,7 @@ input.form-control.desktop-search-bar {
     top: -100%;
     left: 50%;
     transform: translate(-50%);
-    background-color: #fff;
+    background-color: #fbfbfe;
     width: 60%;
 }
 
@@ -101,7 +107,7 @@ input.form-control.desktop-search-bar {
 }
 
 .form-control {
-    border: none;
+    /* border: none; */
     border-radius: 20px;
 }
 
@@ -133,12 +139,12 @@ footer{
 .footer-container {
     margin-top: 80px;
     background-color: #050316;
-    color: #fff;
+    color: #fbfbfe;
 }
 
 .footer-link{
     text-decoration: none;
-    color: #fff;
+    color: #fbfbfe;
 }
 
 .footer-link:hover{
@@ -153,7 +159,7 @@ footer{
 }
 
 .footer-social-links a {
-    color: #fff;
+    color: #fbfbfe;
 }
 
 .footer-social-links a:hover {
@@ -165,12 +171,12 @@ ul.fa-ul{
 }
 
 .open-hours{
-    color: #fff;
+    color: #fbfbfe;
     font-weight: 600;
 }
 
 .footer-copyright{
-    color: #fff;
+    color: #fbfbfe;
     max-width: 100%;
 }
 
@@ -193,16 +199,16 @@ ul.fa-ul{
 
 .hero-content h1 {
     font-size: 160px;
-    color: #fff;
+    color: #fbfbfe;
     font-weight: 600;
 }
 
 .hero-content a {
     text-decoration: none;
     display: inline-block;
-    color: #fff;
+    color: #fbfbfe;
     font-size: 24px;
-    border: 2px solid #fff;
+    border: 2px solid #fbfbfe;
     padding: 14px 70px;
     border-radius: 50px;
     margin-top: 20px;
@@ -338,6 +344,74 @@ a.category-button > span.badge:hover {
     overflow: visible;
 }
 
+/* ------ Allauth Templates ------ */
+
+/* pushes footer down to bottom of page */
+.footer-spacer {
+    padding-top: 40vh;
+}
+
+.allauth-inner-content-container p {
+    margin-top: 1.5rem; /* mt-4 */
+    color: #6c757d; /* text-secondary */
+}
+
+/* setting all input borders to gray with 10px radius */
+
+.allauth-inner-content-container input {
+    border-color: #7c7c7c !important;
+    border-radius: 10px !important;
+}
+
+/* Hide labels on everything except for the remember me checkbox
+   on login page as all other inputs will have placeholders */
+
+.allauth-inner-content-container label:not([for='id_remember']) {
+    display: none;
+}
+
+/* ensure placeholders are same color as rest of site */
+
+.allauth-inner-content-container input::placeholder {
+    color: #aab7c4;
+}
+
+/* Updating allauth default buttons and link color */
+
+.allauth-inner-content-container button,
+.allauth-inner-content-container input[type='submit'] {
+	/* btn bootstrap style */
+	display: inline-block;
+    font-weight: 400;
+    color: #fbfbfe;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #443dff;
+    border: 1px solid #443dff;
+    border-radius: 20px;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+
+    /* standard bootstrap btn transitions */
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.allauth-inner-content-container button:hover,
+.allauth-inner-content-container input[type='submit']:hover {	
+	color: #fbfbfe;
+    background-color: #2f27ce;
+    border-color: #2f27ce;
+}
+
+.allauth-inner-content-container a {
+	color: #17a2b8; /* text-info */
+}
+
 /* ------ Media Queries ------ */
 
 @media (max-width: 1430px) {
@@ -345,8 +419,6 @@ a.category-button > span.badge:hover {
         height: 300px; 
     } */
 }
-
-
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
@@ -381,7 +453,7 @@ a.category-button > span.badge:hover {
         height: calc(100vh - 116px);
     }
 
-    .display-4.logo-font.text-black {
+    .display-4.heading-font.text-black {
         font-size: 2rem;
     }
 
