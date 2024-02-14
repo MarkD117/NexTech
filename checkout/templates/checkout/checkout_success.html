@@ -194,13 +194,22 @@
         </div>
         <!-- Deals Link -->
         <div class="row my-3">
-			<div class="col-12 text-center">
-                <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="btn btn-blue rounded-pill mt-5 pr-3">
-                    <span class="icon mr-1">
-                        <i class="fa-solid fa-tags"></i>
-                    </span>
-                    <span class="text-uppercase">Check out some new deals!</span>
-                </a>
+			<div class="col-12 text-center mt-5">
+                {% if from_profile %}
+                    <a href="{% url 'profile' %}" class="btn btn-blue rounded-pill pr-3">
+                        <span class="icon">
+                            <i class="fas fa-angle-left"></i>
+                        </span>
+                        <span class="text-uppercase">Back to Profile</span>
+                    </a>
+                {% else %}
+                    <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="btn btn-blue rounded-pill pr-3">
+                        <span class="icon mr-1">
+                            <i class="fa-solid fa-tags"></i>
+                        </span>
+                        <span class="text-uppercase">Check out some new deals!</span>
+                    </a>
+                {% endif %}
 			</div>
 		</div>
     </div>
