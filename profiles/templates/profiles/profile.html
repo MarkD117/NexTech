@@ -18,10 +18,29 @@
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="heading-font mb-4">Profile</h2>
+                <h2 class="heading-font mb-4">My Profile</h2>
                 <hr>
             </div>
         </div>
-        {{ profile }}
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                {% if profile.profile_image %}
+                <img width="75" height="75" style="border-radius: 37.25px;" src="{{ profile.profile_image }}" alt="User Profile Image">
+                {% else %}
+                <img width="75" height="75" style="border-radius: 37.25px;" src="{{ MEDIA_URL }}noprofileimage.webp" alt="No Profile Image">
+                {% endif %}
+                <span class="heading-font "> {{ user.username }} </span>
+                <p class="text-muted">Default Delivery Information</p>
+                <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
+                </form>
+            </div>
+            <div class="col-12 col-lg-6">
+                <p class="text-muted">Order History</p>
+                {{ orders }}
+            </div>
+        </div>
     </div>
 {% endblock %}
