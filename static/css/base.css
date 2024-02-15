@@ -325,6 +325,15 @@ a.category-button > span.badge:hover {
     background: #050316e1 !important;
 }
 
+/* ------ Product Form ------ */
+
+#product-form input,
+#product-form textarea,
+#product-form select {
+    border: 1px solid #7c7c7c;
+    border-radius: 10px;
+}
+
 /* ------ Cart ------ */
 
 .btn-blue {
