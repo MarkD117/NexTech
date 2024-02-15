@@ -197,24 +197,24 @@
                     <h5 class="text-uppercase mb-4 pb-1"><strong>Helpful Links</strong></h5>
                     <ul class="fa-ul">
                         <li class="nav-item mb-3">
-                            <a class="footer-link" aria-label="home" aria-current="page"
-                                href="">Home</a>
+                            <a class="footer-link" aria-label="Home" aria-current="page"
+                                href="{% url 'home' %}">Home</a>
                         </li>
                         <li class="nav-item mb-3">
-                            <a class="footer-link" aria-label="projects" aria-current="page"
-                                href="">Products</a>
+                            <a class="footer-link" aria-label="All Products" aria-current="page"
+                                href="{% url 'products' %}">Products</a>
                         </li>
                         <li class="nav-item mb-3">
-                          <a class="footer-link" aria-label="projects" aria-current="page"
-                              href="">Parts</a>
+                          <a class="footer-link" aria-label="All Parts" aria-current="page"
+                              href="{% url 'products' %}?category=graphics_cards,cpus,memory,motherboards">Parts</a>
                         </li>
                         <li class="nav-item mb-3">
-                          <a class="footer-link" aria-label="projects" aria-current="page"
-                              href="">Systems</a>
+                          <a class="footer-link" aria-label="All Systems" aria-current="page"
+                              href="{% url 'products' %}?category=gaming_pcs,office_pcs,laptops">Systems</a>
                         </li>
                         <li class="nav-item mb-3">
-                          <a class="footer-link" aria-label="projects" aria-current="page"
-                              href="">Offers</a>
+                          <a class="footer-link" aria-label="All Offers" aria-current="page"
+                              href="{% url 'products' %}?category=new_arrivals,deals,clearance">Offers</a>
                         </li>
                     </ul>
                 </div>
