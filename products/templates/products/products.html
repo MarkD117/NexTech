@@ -73,7 +73,7 @@
                                 <div class="card-footer pt-0 border-0 text-left" style="background: #dddbff;">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                            <p class="lead mb-0 text-left font-weight-bold" style="color: #443dff;">${{ product.price }}</p>
                                             {% if product.category %}
                                                 <p class="small my-1">
                                                     <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
