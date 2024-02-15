@@ -31,12 +31,14 @@ profile html
                 {% else %}
                 <img width="75" height="75" style="border-radius: 37.25px;" src="{{ MEDIA_URL }}noprofileimage.webp" alt="No Profile Image">
                 {% endif %}
-                <span class="heading-font "> {{ user.username }} </span>
+                <span class="heading-font ml-3"> {{ user.username }}</span>
                 <p class="text-muted">Default Delivery Information</p>
                 <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    <button class="btn btn-black rounded-0 text-uppercase float-right">Update Information</button>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-blue rounded-pill mt-5">Update Profile</button>
+                    </div>
                 </form>
             </div>
             <div class="col-12 col-lg-6">

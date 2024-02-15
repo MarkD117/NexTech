@@ -52,6 +52,10 @@ body {
     flex-direction: row;
 }
 
+.search-bar-radius {
+    border-radius: 20px;
+}
+
 input.form-control.desktop-search-bar {
     border-top: 0.1px solid #7c7c7c;
     border-left: 0.1px solid #7c7c7c;
@@ -65,6 +69,11 @@ input.form-control.desktop-search-bar {
     border-bottom: 0.1px solid #7c7c7c;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+}
+
+.desktop-search-bar-icon {
+    border: white;
+    border-radius: 20px;
 }
 
 .border-gray {
@@ -106,9 +115,9 @@ input.form-control.desktop-search-bar {
     font-weight: 500;
 }
 
-.form-control {
+/* .form-control {
     border-radius: 20px;
-}
+} */
 
 .search-dropdown {
     border-radius: 20px;

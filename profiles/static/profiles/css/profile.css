@@ -8,6 +8,16 @@
     color: #050316;
 }
 
+#profile-update-form input,
+select#id_default_country {
+    border: 1px solid #7c7c7c;
+    border-radius: 10px;
+}
+
+/* #profile-update-form input#id_profile_image {
+    border: none;
+} */
+
 /* Set placeholder inputs to light grey */
 #profile-update-form input::placeholder {
     color: #aab7c4;
