@@ -271,10 +271,10 @@ a.category-button > span.badge:hover {
 }
 
 /* Sets all images the same height avoiding distortion */
-/* .card-img-top {
-    height: 380px; 
+.card-img-top {
+    height: 350px; 
     object-fit: cover;
-} */
+}
 
 .top-button {
     height: 42px;
@@ -439,15 +439,19 @@ a.category-button > span.badge:hover {
 /* ------ Media Queries ------ */
 
 @media (max-width: 1430px) {
-    /* .card-img-top {
+    .card-img-top {
         height: 300px; 
-    } */
+    }
 }
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
     .container {
       max-width: 80%;
+    }
+
+    .card-img-top {
+        height: 280px; 
     }
   }
 
@@ -514,6 +518,10 @@ a.category-button > span.badge:hover {
 
 @media (max-width: 670px) {
 
+    .card-img-top {
+        height: 100%; 
+    }
+
     .hero-content h1 {
         font-size: 100px;
     }
@@ -547,7 +555,7 @@ a.category-button > span.badge:hover {
         padding: 8px 62px;
     }
 
-    /* .card-img-top {
-        height: 250px; 
-    } */
+    .card-img-top {
+        height: 100%; 
+    }
 }
