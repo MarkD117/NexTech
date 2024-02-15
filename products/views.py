@@ -74,7 +74,7 @@ def product_detail(request, product_id):
 
 
 def add_product(request):
-    """ This view adds a product to the store """
+    """ This view handles adding a product to the store """
     # Prevents standard users from accessing view
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only verified users can do that.')
