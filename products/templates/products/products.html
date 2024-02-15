@@ -60,11 +60,11 @@
                             <div class="card product-card h-100">
                                 {% if product.image %}
                                 <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" style="border-radius: 20px;" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    <img class="card-img-top img-fluid product-image-fit" style="border-radius: 20px;" src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </a>
                                 {% else %}
                                 <a href="{% url 'product_detail' product.id %}">
-                                    <img class="card-img-top img-fluid" style="border-radius: 20px;" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
+                                    <img class="card-img-top img-fluid product-image-fit" style="border-radius: 20px;" src="{{ MEDIA_URL }}noimage.jpg" alt="{{ product.name }}">
                                 </a>
                                 {% endif %}
                                 <div class="card-body pb-0" style="background: #dddbff;">

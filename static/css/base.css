@@ -271,7 +271,7 @@ a.category-button > span.badge:hover {
 }
 
 /* Sets all images the same height avoiding distortion */
-.card-img-top {
+.product-image-fit {
     height: 350px; 
     object-fit: cover;
 }
@@ -439,7 +439,7 @@ a.category-button > span.badge:hover {
 /* ------ Media Queries ------ */
 
 @media (max-width: 1430px) {
-    .card-img-top {
+    .product-image-fit {
         height: 300px; 
     }
 }
@@ -450,7 +450,7 @@ a.category-button > span.badge:hover {
       max-width: 80%;
     }
 
-    .card-img-top {
+    .product-image-fit {
         height: 280px; 
     }
   }
@@ -518,7 +518,7 @@ a.category-button > span.badge:hover {
 
 @media (max-width: 670px) {
 
-    .card-img-top {
+    .product-image-fit {
         height: 100%; 
     }
 
@@ -555,7 +555,7 @@ a.category-button > span.badge:hover {
         padding: 8px 62px;
     }
 
-    .card-img-top {
+    .product-image-fit {
         height: 100%; 
     }
 }
