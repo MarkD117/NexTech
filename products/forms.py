@@ -6,6 +6,9 @@ class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = '__all__'
+    
+    # Replace image field on form to use custom image widget
+    image = forms.ImageField(label='Image', required=False, widget= CustomClearableFileInput)
 
     # Override init method to make changes to the fields
     def __init__(self, *args, **kwargs):
