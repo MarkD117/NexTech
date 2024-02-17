@@ -536,11 +536,21 @@ a.category-button > span.badge:hover {
         padding: .375rem .375rem;
     }
 
+    .btn.btn-blue.rounded-pill.btn-lg {
+        margin-right: 4px;
+    }
+
+    .btn.btn-black.rounded-pill.btn-lg {
+        margin-left: 4px;
+    }
+
+
     .btn.btn-blue.rounded-pill.btn-lg,
     .btn.btn-black.rounded-pill.btn-lg {
         padding: .375rem .375rem;
-        font-size: .8rem;
+        font-size: .85rem;
         margin-top: 15px;
+        margin-bottom: 15px;
     }
 
     .increment-qty, .decrement-qty {
@@ -574,6 +584,14 @@ a.category-button > span.badge:hover {
     .hero-content a {
         font-size: 18px;
         padding: 10px 66px;
+    }
+}
+
+/* Bootstrap sm screen size */
+@media (max-width: 576px) {
+    .mobile-center-buttons {
+        display: flex;
+        justify-content: center;
     }
 }
 
