@@ -393,7 +393,7 @@ a.category-button > span.badge:hover {
 }
 
 .cart-summary-container {
-    height: 150px;
+    height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
 }
