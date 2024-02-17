@@ -569,6 +569,11 @@ a.category-button > span.badge:hover {
         margin-left: auto;
         margin-right: auto;
     }
+
+    /* Sets quantity selector width on mobile screens */
+    .mobile-width-100 {
+        width: 100% !important;
+    }
 }
 
 @media (max-width: 670px) {
@@ -592,6 +597,14 @@ a.category-button > span.badge:hover {
     .mobile-center-buttons {
         display: flex;
         justify-content: center;
+    }
+
+    .mobile-update-btn {
+        margin-right: .5rem;
+    }
+
+    .mobile-remove-btn {
+        margin-left: .5rem;
     }
 }
 

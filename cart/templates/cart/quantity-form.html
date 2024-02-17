@@ -1,3 +1,7 @@
+<p class=""><strong>Quantity:</strong></p>
+<form class="form update-form" method="POST" action="{% url 'update_cart' item.item_id %}">
+    {% csrf_token %}
+    <div class="form-group border w-25 mobile-width-100">
         <div class="input-group input-group-{{ item.item_id }}">
             <div class="input-group-prepend">
                 <button class="decrement-qty btn btn-black rounded-0 decrement-qty_{{ item.item_id }}" 
@@ -21,3 +25,13 @@
         </div>
     </div>
 </form>
+<div class="mobile-center-buttons">
+    <button class="update-link mobile-update-btn btn btn-sm btn-primary rounded-pill">
+        <a class="text-white text-decoration-none"><small>Update</small></a>
+        <i class="fa-solid fa-rotate-right"></i>
+    </button>
+    <button class="remove-item mobile-remove-btn btn btn-sm btn-danger rounded-pill" id="remove_{{ item.item_id }}">                                        
+        <a class="text-white text-decoration-none"><small>Remove</small></a>
+        <i class="fa-solid fa-trash-can"></i>
+    </button>
+</div>

@@ -34,9 +34,9 @@
                     </div>
                     <div class="row">
                         <div class="col">
-                            <!-- <div class="d-flex justify-content-center"> -->
-                            {% include "cart/checkout-buttons.html" %}
-                            <!-- </div> -->
+                            <div class="mobile-center-buttons">
+                                {% include "cart/checkout-buttons.html" %}
+                            </div>
                             <p class="text-muted mb-5">A summary of your cart contents can be viewed below</p>
                         </div>
                     </div>
@@ -52,21 +52,7 @@
                                 <p><strong>Subtotal: </strong>${{ item.product.price | calc_subtotal:item.quantity }}</p>
                             </div>
                             <div class="col-12 col-sm-6">
-                                <p class=""><strong>Quantity:</strong></p>
-                                <form class="form update-form" method="POST" action="{% url 'update_cart' item.item_id %}">
-                                    {% csrf_token %}
-                                    <div class="form-group border w-100">
                                 {% include "cart/quantity-form.html" %}
-                                <div class="mobile-center-buttons update-link">
-                                    <button class="mr-2 btn btn-sm btn-primary rounded-pill">
-                                        <a class="text-white text-decoration-none"><small>Update</small></a>
-                                        <i class="fa-solid fa-rotate-right"></i>
-                                    </button>
-                                    <button class="remove-item ml-2 btn btn-sm btn-danger rounded-pill" id="remove_{{ item.item_id }}">                                        
-                                        <a class="text-white text-decoration-none"><small>Remove</small></a>
-                                        <i class="fa-solid fa-trash-can"></i>
-                                    </button>
-                                </div>
                             </div>
                         </div>
                         <div class="row"><div class="col"><hr></div></div>
@@ -95,19 +81,7 @@
                                 </td>
                                 <td class="py-3">
                                     {% include "cart/product-info.html" %}
-                                    <p class=""><strong>Quantity:</strong></p>
-                                    <form class="form update-form" method="POST" action="{% url 'update_cart' item.item_id %}">
-                                        {% csrf_token %}
-                                        <div class="form-group border w-25">
                                     {% include "cart/quantity-form.html" %}
-                                    <button class="update-link btn btn-sm btn-primary rounded-pill">
-                                        <a class="text-white text-decoration-none"><small>Update</small></a>
-                                        <i class="fa-solid fa-rotate-right"></i>
-                                    </button>
-                                    <button class="remove-item btn btn-sm btn-danger rounded-pill" id="remove_{{ item.item_id }}">                                        
-                                        <a class="text-white text-decoration-none"><small>Remove</small></a>
-                                        <i class="fa-solid fa-trash-can"></i>
-                                    </button>
                                 </td>
                                 <td class="py-3">
                                     <p class="my-0"><strong>${{ item.product.price | calc_subtotal:item.quantity }}</strong></p>
@@ -170,10 +144,10 @@
 <script type="text/javascript">
     // Update quantity on click
     $('.update-link').click(function(e) {
-        // Assign update form to variable
-        var form = $(this).prev('.update-form');
+        // Find the form associated with the clicked button
+        var form = $(this).closest('.mobile-center-buttons').prev('.update-form');
         form.submit();
-    })
+    });
 
     // Remove item and reload on click
     $('.remove-item').click(function(e) {
