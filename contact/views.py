@@ -14,7 +14,7 @@ def subscribe(request):
         form = NewsletterForm()
 
     context = {
-        'form': form
+        'NewsletterForm': form
     }
 
     return render(request, 'base.html', context)
