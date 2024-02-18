@@ -193,6 +193,11 @@
                       Explore our vast selection for all your computing needs. NexTech - where innovation 
                       meets convenience. 
                     </p>
+                    <form method="post" action="{% url 'subscribe' %}">
+                      {% csrf_token %}
+                      {{ form|crispy }}
+                      <button type="submit" class="btn btn-primary">Subscribe</button>
+                  </form>
                 </div>
                 <!-- column 2 -->
                 <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
