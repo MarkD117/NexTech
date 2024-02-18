@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import NewsletterForm
+from .forms import NewsletterForm, ContactForm
 
 
 def subscribe(request):
@@ -18,3 +18,20 @@ def subscribe(request):
     }
 
     return render(request, 'base.html', context)
+
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your message has been sent to the team!')
+            return redirect('home')
+    else:
+        form = ContactForm()
+    
+    context = {
+        'ContactForm': form
+    }
+
+    return render(request, 'contact/contact.html', context)
