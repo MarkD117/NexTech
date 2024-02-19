@@ -481,6 +481,12 @@ a.category-button > span.badge:hover {
     }
 }
 
+@media (max-width: 1322px) {
+    .nav-link {
+        padding: 0.5rem;
+    }
+}
+
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
     .container {
@@ -491,6 +497,13 @@ a.category-button > span.badge:hover {
         height: 280px; 
     }
   }
+
+@media (max-width: 1131px){
+    /* Prevent nav links from wrapping */
+    .nav-link {
+        padding: 0.25rem;
+    }
+}
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
@@ -510,7 +523,7 @@ a.category-button > span.badge:hover {
 @media (max-width: 1072px){
     /* Prevent nav links from wrapping */
     .nav-link {
-        padding: 0.15rem;
+        padding: 0.12rem;
     }
 }
 
@@ -525,7 +538,7 @@ a.category-button > span.badge:hover {
         height: calc(100vh - 116px);
     }
 
-    .display-4.heading-font.text-black {
+    .display-4.heading-font {
         font-size: 2rem;
     }
 
