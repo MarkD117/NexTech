@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .models import WishList
 from products.models import Product
-from django.contrib.auth.decorators import login_required
+
 
 
 @login_required
@@ -25,6 +27,7 @@ def add_to_wishlist(request, product_id):
     product = Product.objects.get(id=product_id)
     wishlist, created = WishList.objects.get_or_create(user=request.user)
     wishlist.products.add(product)
+    messages.success(request, 'Prouct added to Wishlist!')
     return redirect('product_detail', product_id=product_id)
 
 
@@ -33,4 +36,5 @@ def remove_from_wishlist(request, product_id):
     product = Product.objects.get(id=product_id)
     wishlist = WishList.objects.get(user=request.user)
     wishlist.products.remove(product)
+    messages.success(request, 'Prouct removed from Wishlist!')
     return redirect('product_detail', product_id=product_id)
