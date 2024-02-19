@@ -17,7 +17,7 @@ def subscribe(request):
         'NewsletterForm': form
     }
 
-    return render(request, 'base.html', context)
+    return render(request, 'contact/newsletter.html', context)
 
 
 def contact(request):

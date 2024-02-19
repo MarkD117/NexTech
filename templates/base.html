@@ -193,11 +193,22 @@
                       Explore our vast selection for all your computing needs. NexTech - where innovation 
                       meets convenience. 
                     </p>
-                    <form method="post" action="{% url 'subscribe' %}">
+                    <h5 class="text-uppercase mb-4"><strong>Subscribe to our Newsletter</strong></h5>
+                    <form method="post" action="/contact/subscribe/" class="row">
                       {% csrf_token %}
-                      {{ NewsletterForm|crispy }}
-                      <button type="submit" class="btn btn-primary">Subscribe</button>
-                  </form>
+                      <div id="div_id_email" class="form-group">
+                          <div>
+                              <input type="email" name="email" maxlength="100" class="form-control emailinput" placeholder="Your email" required id="id_email">
+                          </div>
+                      </div>
+                      <div id="subscribe-btn">
+                          <button type="submit" class="btn btn-primary w-100">
+                              <span class="icon">
+                                  <i class="fas fa-chevron-right"></i>
+                              </span>
+                          </button>
+                      </div>
+                    </form>
                 </div>
                 <!-- column 2 -->
                 <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
