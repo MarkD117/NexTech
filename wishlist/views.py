@@ -6,9 +6,13 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def view_wishlist(request):
-    # Retrieve the wishlist of the current user
-    wishlist = WishList.objects.get(user=request.user)
-
+    try:
+        # Try to retrieve the wishlist of the current user
+        wishlist = WishList.objects.get(user=request.user)
+    except WishList.DoesNotExist:
+        # If wishlist doesn't exist for the user, create a new one
+        wishlist = WishList.objects.create(user=request.user)
+    
     context = {
         'wishlist': wishlist
     }
