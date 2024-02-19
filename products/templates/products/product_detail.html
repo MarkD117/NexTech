@@ -41,6 +41,15 @@
                     {% else %}
                         <small class="text-muted">No Rating</small>
                     {% endif %}
+                    <div>
+                        {% if request.user.is_authenticated %}
+                            {% if product in request.user.wishlist.products.all %}
+                                <a href="{% url 'remove_from_wishlist' product.id %}">Remove from Wishlist</a>
+                            {% else %}
+                                <a href="{% url 'add_to_wishlist' product.id %}">Add to Wishlist</a>
+                            {% endif %}
+                        {% endif %}
+                    </div>
                     {% if product.in_stock %}
                     <div class="stock-tag in-stock">    
                         <p class="m-0">In Stock</p>
