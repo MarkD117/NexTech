@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>My Wishlist</h2>
+    {% if wishlist.products.exists %}
+        <ul>
+            {% for product in wishlist.products.all %}
+                <li>{{ product.name }} - {{ product.price }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You don't have any products in your wishlist at the moment!</p>
+    {% endif %}
+</div>
+{% endblock %}
