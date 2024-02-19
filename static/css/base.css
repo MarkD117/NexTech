@@ -193,6 +193,12 @@ ul.fa-ul{
     max-width: 100%;
 }
 
+/* ------ Newsletter ------ */
+
+#newsletter-form input {
+    height: 41px;
+}
+
 /* ------ Hero Section ------ */
 
 .hero-container {
@@ -605,6 +611,10 @@ a.category-button > span.badge:hover {
 
     .mobile-remove-btn {
         margin-left: .5rem;
+    }
+
+    #subscribe-btn {
+        padding: 0;
     }
 }
 

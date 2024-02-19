@@ -193,22 +193,26 @@
                       Explore our vast selection for all your computing needs. NexTech - where innovation 
                       meets convenience. 
                     </p>
-                    <h5 class="text-uppercase mb-4"><strong>Subscribe to our Newsletter</strong></h5>
-                    <form method="post" action="/contact/subscribe/" class="row">
-                      {% csrf_token %}
-                      <div id="div_id_email" class="form-group">
-                          <div>
-                              <input type="email" name="email" maxlength="100" class="form-control emailinput" placeholder="Your email" required id="id_email">
+                    <div class="my-4">
+                      <h5 class="text-uppercase mb-4"><strong>Subscribe to our Newsletter</strong></h5>
+                      <div class="d-flex justify-content-center">
+                        <form method="post" action="/contact/subscribe/" class="row" id="newsletter-form">
+                          {% csrf_token %}
+                          <div id="div_id_email" class="form-group col-md-8 col-sm-9 p-0">
+                              <div>
+                                  <input type="email" name="email" maxlength="100" class="form-control emailinput" placeholder="Your email" required id="id_email">
+                              </div>
                           </div>
+                          <div class="col-md-4 col-sm-3" id="subscribe-btn">
+                              <button type="submit" class="btn btn-blue w-100">
+                                  <span class="icon">
+                                      <i class="fas fa-chevron-right"></i>
+                                  </span>
+                              </button>
+                          </div>
+                        </form>
                       </div>
-                      <div id="subscribe-btn">
-                          <button type="submit" class="btn btn-primary w-100">
-                              <span class="icon">
-                                  <i class="fas fa-chevron-right"></i>
-                              </span>
-                          </button>
-                      </div>
-                    </form>
+                    </div>
                 </div>
                 <!-- column 2 -->
                 <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
