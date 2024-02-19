@@ -11,15 +11,49 @@
 
 {% block content %}
 <div class="container">
-    <h2>My Wishlist</h2>
+    <!-- Heading Row -->
+    <div class="row">
+        <div class="col-12 col-lg-8 offset-lg-2">
+            <hr>
+            <h2 class="heading-font mb-4">My Wishlist</h2>
+            <hr>
+            {% if wishlist.products.exists %}
+            <p class="text-muted">Your wishlisted items can be seen below!</p>
+            {% else %}
+            <p class="text-muted">You don't have any products in your wishlist at the moment!</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Product Information -->
     {% if wishlist.products.exists %}
-        <ul>
-            {% for product in wishlist.products.all %}
-                <li>{{ product.name }} - {{ product.price }}</li>
-            {% endfor %}
-        </ul>
+        {% for product in wishlist.products.all %}
+        <div class="row">
+            <div class="col-12 col-lg-3 col-md-4 mb-1">
+                <a href="{% url 'product_detail' product.id %}">
+                    {% if product.image %}
+                        <img class="w-100" src="{{ product.image.url }}" alt="{{ product.name }}">
+                    {% else %}
+                        <img class="w-100" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                    {% endif %}
+                </a>
+            </div>
+            <div class="col-12 col-lg-5 col-md-6">
+                <p class="small mb-0  font-weight-bold">
+                    {{ product.name }}
+                </p>
+                <p class="mt-4 small text-muted">SKU: {{ product.sku|upper }}</p>
+                <p class="small text-muted">Unit Price: ${{ product.price }}</p>
+            </div>
+            <div class="col-12 col-lg-4 col-md-2 text-md-right">
+                <a class="btn btn-danger rounded-pill" href="{% url 'remove_from_wishlist' product.id %}">Remove <i class="fa-solid fa-trash-can"></i></a>
+            </div>
+        </div>
+        <hr>
+        {% endfor %}
     {% else %}
-        <p>You don't have any products in your wishlist at the moment!</p>
+        
+        <div class="footer-spacer"></div>
     {% endif %}
 </div>
 {% endblock %}
