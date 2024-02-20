@@ -339,7 +339,9 @@ a.category-button > span.badge:hover {
 
 #product-form input,
 #product-form textarea,
-#product-form select {
+#product-form select,
+#contact-form input,
+#contact-form textarea {
     border: 1px solid #7c7c7c;
     border-radius: 10px;
 }
