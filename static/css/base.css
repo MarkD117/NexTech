@@ -480,7 +480,7 @@ a.category-button > span.badge:hover {
     min-width: 260px;
 }
 
-.shop-return-hover {
+.shop-return-btn:hover {
     background: #2f27ce;
     color: #d4edda;
 }
