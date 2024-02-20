@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/?sort=price&amp;direction=asc</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/?sort=rating&amp;direction=desc</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/?sort=category&amp;direction=asc</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/?category=graphics_cards</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/?category=cpus</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/?category=memory</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/?category=motherboards</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/?category=graphics_cards,cpus,memory,motherboards</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/?category=gaming_pcs</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/?category=office_pcs</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/?category=laptops</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/?category=gaming_pcs,office_pcs,laptops</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/?category=new_arrivals</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/?category=deals</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/?category=clearance</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/?category=new_arrivals,deals,clearance</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/accounts/login/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/cart/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/contact/contact-form/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/59/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/62/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/61/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/9/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/16/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/12/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/14/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/27/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/28/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/13/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/50/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/15/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/30/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/49/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/23/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/54/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/24/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/29/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/47/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/48/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/53/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/10/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/11/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/52/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/34/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/25/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/51/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/32/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/60/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/37/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/31/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/36/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/57/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/55/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/38/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/35/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/56/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/33/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/26/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/products/58/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://nextech-5db9177526a4.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2024-02-20T00:35:28+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
