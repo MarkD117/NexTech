@@ -473,6 +473,14 @@ a.category-button > span.badge:hover {
 	color: #17a2b8; /* text-info */
 }
 
+/* ------ Errors ------ */
+
+.shop-return-btn {
+    background: #443dff;
+    color: #d4edda;
+    min-width: 260px;
+}
+
 /* ------ Media Queries ------ */
 
 @media (max-width: 1430px) {
