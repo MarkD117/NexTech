@@ -146,7 +146,7 @@
     $('.update-link').click(function(e) {
         // Find the form associated with the clicked button
         var form = $(this).closest('.mobile-center-buttons').prev('.update-form');
-        form.submit();
+        form[0].requestSubmit();
     });
 
     // Remove item and reload on click
