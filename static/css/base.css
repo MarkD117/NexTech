@@ -263,15 +263,14 @@ ul.fa-ul{
 a.category-button > span.badge {
     color: #fbfbfe;
     background: #2f27ce;
-    border: 2px solid #2f27ce;
+    border: 1px solid #2f27ce;
     border-radius: 20px;
-    letter-spacing: 1.5px;
 }
 
 a.category-button > span.badge:hover {
-    color: #050316;
+    color: #2f27ce;
     background: #dddbff;
-    border: 2px solid #2f27ce;
+    border: 1px solid #2f27ce;
     transition: 0.2s all linear;
 }
 
@@ -480,6 +479,12 @@ a.category-button > span.badge:hover {
     color: #d4edda;
     min-width: 260px;
 }
+
+.shop-return-hover {
+    background: #2f27ce;
+    color: #d4edda;
+}
+
 
 /* ------ Media Queries ------ */
 
