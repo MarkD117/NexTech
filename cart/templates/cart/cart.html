@@ -53,6 +53,16 @@
                             </div>
                             <div class="col-12 col-sm-6">
                                 {% include "cart/quantity-form.html" %}
+                                <div class="mobile-center-buttons">
+                                    <button class="update-link mobile-update-btn btn btn-sm btn-primary rounded-pill">
+                                        <span class="text-white small">Update</span>
+                                        <i class="fa-solid fa-rotate-right"></i>
+                                    </button>
+                                    <button class="remove-item-desktop mobile-remove-btn btn btn-sm btn-danger rounded-pill" id="desktop-remove_{{ item.item_id }}">                                        
+                                        <span class="text-white small">Remove</span>
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                         <div class="row"><div class="col"><hr></div></div>
@@ -82,6 +92,14 @@
                                 <td class="py-3">
                                     {% include "cart/product-info.html" %}
                                     {% include "cart/quantity-form.html" %}
+                                    <button class="update-link mobile-update-btn btn btn-sm btn-primary rounded-pill">
+                                        <span class="text-white small">Update</span>
+                                        <i class="fa-solid fa-rotate-right"></i>
+                                    </button>
+                                    <button class="remove-item-mobile mobile-remove-btn btn btn-sm btn-danger rounded-pill" id="mobile-remove_{{ item.item_id }}">                                        
+                                        <span class="text-white small">Remove</span>
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
                                 </td>
                                 <td class="py-3">
                                     <p class="my-0"><strong>${{ item.product.price | calc_subtotal:item.quantity }}</strong></p>
@@ -89,12 +107,12 @@
                             </tr>
                         {% endfor %}
                         <tr>
-                            <td colspan="5" class="pt-5 text-right">
+                            <td colspan="3" class="pt-5 text-right">
                                 {% include "cart/cart-total.html" %}
                             </td>
                         </tr>
                         <tr>
-                            <td colspan="5" class="text-right">
+                            <td colspan="3" class="text-right">
                                 {% include "cart/checkout-buttons.html" %}
                             </td>
                         </tr>
@@ -149,17 +167,27 @@
         form[0].requestSubmit();
     });
 
-    // Remove item and reload on click
-    $('.remove-item').click(function(e) {
+    // Remove item on desktop and reload on click
+    $('.remove-item-desktop').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
-        // Get item id by splitting after 'remove_'
-        var itemId = $(this).attr('id').split('remove_')[1];
-        // Get removal url
+        var itemId = $(this).attr('id').split('desktop-remove_')[1];
         var url = `/cart/remove/${itemId}/`;
-        // Object used to send this data to the server
         var data = {'csrfmiddlewaretoken': csrfToken};
 
         // post to server & when done, reload page
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    })
+
+    // Remove item on mobile and reload on click
+    $('.remove-item-mobile').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('mobile-remove_')[1];
+        var url = `/cart/remove/${itemId}/`;
+        var data = {'csrfmiddlewaretoken': csrfToken};
+
         $.post(url, data)
          .done(function() {
              location.reload();
