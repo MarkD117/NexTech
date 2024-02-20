@@ -2,13 +2,27 @@
 {% load static %}
 
 {% block content %}
-    <video autoplay loop muted plays-inline disablePictureInPicture webkit-playsinline playsinline controlsList="nodownload" class="bg-video">
-        <source src="{{ MEDIA_URL }}hero-bg-video.mp4" type="video/mp4">
-    </video>
-    <div class="hero-container">
-        <div class="hero-content">
-            <h1>NexTech</h1>
-            <a href="{% url 'products' %}">Explore</a>
-        </div>
+<video autoplay loop muted id="bg-video">
+    <source src="{{ MEDIA_URL }}hero-bg-video.mp4" type="video/mp4">
+</video>
+<div class="hero-container">
+    <div class="hero-content">
+        <h1>NexTech</h1>
+        <a href="{% url 'products' %}">Explore</a>
     </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<!-- Sets video attributes on video element in compliance with html validation -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var video = document.getElementById('bg-video');
+        video.setAttribute('playsinline', true); // For iOS devices
+        video.setAttribute('webkit-playsinline', true); // For older versions of iOS
+        video.setAttribute('controlsList', 'nodownload'); // Disable download button
+        video.setAttribute('disablePictureInPicture', true); // Disable Picture-in-Picture mode
+    });
+</script>
 {% endblock %}

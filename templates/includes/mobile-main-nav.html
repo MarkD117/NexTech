@@ -1,16 +1,16 @@
 <ul class="navbar-nav w-auto mx-auto">
     <li class="nav-item d-block d-lg-none">
-        <a class="text-uppercase font-weight-bold text-white nav-link" href="{% url 'home' %}" id="home-link">
+        <a class="text-uppercase font-weight-bold text-white nav-link" href="{% url 'home' %}" id="home-link-mobile">
             Home
         </a>
     </li>
     <!-- All Products Dropdown -->
     <li class="nav-item dropdown">
-        <a class="text-uppercase font-weight-bold nav-link text-white" href="#" id="all-products-link"
+        <a class="text-uppercase font-weight-bold nav-link text-white" href="#" id="all-products-link-mobile"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             All Products
         </a>
-        <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+        <div class="dropdown-menu border-0" aria-labelledby="all-products-link-mobile">
             <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
             <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
             <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
@@ -19,11 +19,11 @@
     </li>
     <!-- Parts Dropdown -->
     <li class="nav-item dropdown">
-        <a class="text-uppercase font-weight-bold nav-link text-white" href="#" id="parts-link" data-toggle="dropdown"
+        <a class="text-uppercase font-weight-bold nav-link text-white" href="#" id="parts-link-mobile" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Parts
         </a>
-        <div class="dropdown-menu border-0" aria-labelledby="parts-link">
+        <div class="dropdown-menu border-0" aria-labelledby="parts-link-mobile">
             <a href="{% url 'products' %}?category=graphics_cards" class="dropdown-item">Graphics Cards</a>
             <a href="{% url 'products' %}?category=cpus" class="dropdown-item">CPUs</a>
             <a href="{% url 'products' %}?category=memory" class="dropdown-item">Memory</a>
@@ -33,11 +33,11 @@
     </li>
     <!-- Systems Dropdown -->
     <li class="nav-item dropdown">
-        <a class="text-uppercase font-weight-bold nav-link text-white" href="#" id="systems-link" data-toggle="dropdown"
+        <a class="text-uppercase font-weight-bold nav-link text-white" href="#" id="systems-link-mobile" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             Systems
         </a>
-        <div class="dropdown-menu border-0" aria-labelledby="systems-link">
+        <div class="dropdown-menu border-0" aria-labelledby="systems-link-mobile">
             <a href="{% url 'products' %}?category=gaming_pcs" class="dropdown-item">Gaming PCs</a>
             <a href="{% url 'products' %}?category=office_pcs" class="dropdown-item">Office PCs</a>
             <a href="{% url 'products' %}?category=laptops" class="dropdown-item">Laptops</a>
@@ -46,11 +46,11 @@
     </li>
     <!-- Offers Dropdown -->
     <li class="nav-item dropdown">
-        <a class="text-uppercase font-weight-bold nav-link text-white" href="#" id="specials-link"
+        <a class="text-uppercase font-weight-bold nav-link text-white" href="#" id="specials-link-mobile"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Offers
         </a>
-        <div class="dropdown-menu border-0" aria-labelledby="specials-link">
+        <div class="dropdown-menu border-0" aria-labelledby="specials-link-mobile">
             <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
                 <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
                 <a href="{% url 'products' %}?category=clearance" class="dropdown-item">Clearance</a>

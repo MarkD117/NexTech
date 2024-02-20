@@ -12,11 +12,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="Mark Dunne">
   <meta name="publisher" content="Mark Dunne">
-  <meta name="keywords" 
-      content="CPU, GPU, RAM, Motherboard, Graphics Card, Gaming Computer, Gaming Laptop, Custom Gaming PC, Office Computer, Workstation PC,
+  <meta name="keywords" content="CPU, GPU, RAM, Motherboard, Graphics Card, Gaming Computer, Gaming Laptop, Custom Gaming PC, Office Computer, Workstation PC,
                Computer Store, Tech Shop, Buy Computer Components, PC Parts, Best PC Builds, Tech Gadgets">
-  <meta name="description"
-      content="Nextech is your one-stop destination for all things tech. Shop our wide selection of computer components, gaming PCs, office systems,
+  <meta name="description" content="Nextech is your one-stop destination for all things tech. Shop our wide selection of computer components, gaming PCs, office systems,
       laptops, and accessories. Discover the latest tech deals and build your dream setup today.">
   {% endblock %}
 
@@ -59,123 +57,187 @@
 <body>
   <!-- Navbar -->
   <header class="container-fluid fixed-top {% if is_home_page %}navbar-bg{% else %}solid-bg{% endif %}" id="outer-nav">
-    </nav>
-    <div class="row py-lg-2 d-none d-lg-flex">
-      <!-- Main logo column -->
-      <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 text-center text-lg-left">
-        <a href="{% url 'home' %}" class="nav-link main-logo-link">
-          <img src="{{ MEDIA_URL }}logo.jpg" alt="NexTech Logo" width="50" height="50" style="border-radius: 30px;">
-        </a>
-      </div>
-      <!-- Main desktop nav -->
-      <div class="col-12 col-lg-6 my-auto py-1 py-lg-0">
-        <div id="desktop-nav">
-          {% include 'includes/main-nav.html' %}
+    <nav>
+      <div class="row py-lg-2 d-none d-lg-flex">
+        <!-- Main logo column -->
+        <div class="col-12 col-lg-3 my-auto py-1 py-lg-0 text-center text-lg-left">
+          <a href="{% url 'home' %}" class="nav-link main-logo-link">
+            <img src="{{ MEDIA_URL }}logo.jpg" alt="NexTech Logo" width="50" height="50" style="border-radius: 30px;">
+          </a>
         </div>
-      </div>
-      <!-- Search, Account, and Cart Column -->
-      <div class="col-12 col-lg-3 my-auto py-1 py-lg-0">
-        <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-          <!-- Search Icon -->
-          <li class="list-inline-item">
-            <a class="text-black nav-link d-block" href="#" id="search-icon">
-              <div class="text-center">
-                <div><i class="fas fa-search fa-lg"></i></div>
-                <p class="my-0 text-uppercase">Search</p>
-              </div>
-            </a>
-          </li>
-          <!-- Account Dropdown -->
-          <li class="list-inline-item dropdown">
-            <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              <div class="text-center">
-                <div><i class="fas fa-user fa-lg"></i></div>
-                <p class="my-0 text-uppercase">Account</p>
-              </div>
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="user-options">
-              {% if request.user.is_authenticated %}
-              {% if request.user.is_superuser %}
-              <!-- Allows admins to manage products -->
-              <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
-              {% endif %}
-              <a href="{% url 'profile' %}" class="dropdown-item">Profile</a>
-              <a href="{% url 'view_wishlist' %}" class="dropdown-item">Wishlist</a>
-              <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-              {% else %}
-              <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-              <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-              {% endif %}
-            </div>
-          </li>
-          <!-- Shopping Cart -->
-          <li class="list-inline-item">
-            <a class="{% if grand_total %}text-warning font-weight-bold{% else %}text-white{% endif %} nav-link"
-              href="{% url 'view_cart' %}">
-              <div class="text-center">
-                <div><i class="fa-solid fa-cart-shopping"></i></div>
-                <p class="my-0">
-                  <!-- Checks and formats total -->
-                  {% if grand_total %}
-                  ${{ grand_total|floatformat:2 }}
-                  {% else %}
-                  $0.00
-                  {% endif %}
-                </p>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <!-- Desktop Search Bar -->
-    <div class="row d-none d-lg-flex">
-      <form class="form border" method="GET" action="{% url 'products' %}">
-        <div class="input-group search-box">
-          <input class="form-control search-bar-radius desktop-search-bar" type="text" name="q" placeholder="Search for a product ...">
-          <div class="input-group-append desktop-search-bar-button">
-            <button class="form-control form-control desktop-search-bar-icon" type="submit">
-              <span class="icon">
-                <i class="fas fa-search"></i>
-              </span>
-            </button>
+        <!-- Main desktop nav -->
+        <div class="col-12 col-lg-6 my-auto py-1 py-lg-0">
+          <div id="desktop-nav">
+            <ul class="navbar-nav w-auto mx-auto">
+              <li class="nav-item d-block d-lg-none">
+                <a class="text-uppercase font-weight-bold text-white nav-link" href="{% url 'home' %}"
+                  id="home-link-desktop">
+                  Home
+                </a>
+              </li>
+              <!-- All Products Dropdown -->
+              <li class="nav-item dropdown">
+                <a class="text-uppercase font-weight-bold nav-link text-white" href="#" id="all-products-link-desktop"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  All Products
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="all-products-link-desktop">
+                  <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                  <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                  <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+                  <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
+                </div>
+              </li>
+              <!-- Parts Dropdown -->
+              <li class="nav-item dropdown">
+                <a class="text-uppercase font-weight-bold nav-link text-white" href="#" id="parts-link-desktop"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Parts
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="parts-link-desktop">
+                  <a href="{% url 'products' %}?category=graphics_cards" class="dropdown-item">Graphics Cards</a>
+                  <a href="{% url 'products' %}?category=cpus" class="dropdown-item">CPUs</a>
+                  <a href="{% url 'products' %}?category=memory" class="dropdown-item">Memory</a>
+                  <a href="{% url 'products' %}?category=motherboards" class="dropdown-item">Motherboards</a>
+                  <a href="{% url 'products' %}?category=graphics_cards,cpus,memory,motherboards"
+                    class="dropdown-item">All Parts</a>
+                </div>
+              </li>
+              <!-- Systems Dropdown -->
+              <li class="nav-item dropdown">
+                <a class="text-uppercase font-weight-bold nav-link text-white" href="#" id="systems-link-desktop"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Systems
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="systems-link-desktop">
+                  <a href="{% url 'products' %}?category=gaming_pcs" class="dropdown-item">Gaming PCs</a>
+                  <a href="{% url 'products' %}?category=office_pcs" class="dropdown-item">Office PCs</a>
+                  <a href="{% url 'products' %}?category=laptops" class="dropdown-item">Laptops</a>
+                  <a href="{% url 'products' %}?category=gaming_pcs,office_pcs,laptops" class="dropdown-item">All
+                    Systems</a>
+                </div>
+              </li>
+              <!-- Offers Dropdown -->
+              <li class="nav-item dropdown">
+                <a class="text-uppercase font-weight-bold nav-link text-white" href="#" id="specials-link-desktop"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Offers
+                </a>
+                <div class="dropdown-menu border-0" aria-labelledby="specials-link-desktop">
+                  <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
+                  <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
+                  <a href="{% url 'products' %}?category=clearance" class="dropdown-item">Clearance</a>
+                  <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="dropdown-item">All
+                    Offers</a>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
-      </form>
-    </div>
-    <!-- Mobile Navigation Menu -->
-    <div class="row d-lg-none d-block">
-      <div class="navbar navbar-expand-lg w-100">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
-          aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"><i class="text-white fa-solid fa-bars"></i></span>
-        </button>
-        {% include 'includes/mobile-nav.html' %}
-        <div class="collapse navbar-collapse" id="main-nav">
-          {% include 'includes/main-nav.html' %}
+        <!-- Search, Account, and Cart Column -->
+        <div class="col-12 col-lg-3 my-auto py-1 py-lg-0">
+          <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+            <!-- Search Icon -->
+            <li class="list-inline-item">
+              <a class="text-black nav-link d-block" href="#" id="search-icon">
+                <div class="text-center">
+                  <div><i class="fas fa-search fa-lg"></i></div>
+                  <p class="my-0 text-uppercase">Search</p>
+                </div>
+              </a>
+            </li>
+            <!-- Account Dropdown -->
+            <li class="list-inline-item dropdown">
+              <a class="nav-link text-white" href="#" id="user-options-desktop" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <div class="text-center">
+                  <div><i class="fas fa-user fa-lg"></i></div>
+                  <p class="my-0 text-uppercase">Account</p>
+                </div>
+              </a>
+              <div class="dropdown-menu border-0" aria-labelledby="user-options-desktop">
+                {% if request.user.is_authenticated %}
+                {% if request.user.is_superuser %}
+                <!-- Allows admins to manage products -->
+                <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                {% endif %}
+                <a href="{% url 'profile' %}" class="dropdown-item">Profile</a>
+                <a href="{% url 'view_wishlist' %}" class="dropdown-item">Wishlist</a>
+                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                {% else %}
+                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                {% endif %}
+              </div>
+            </li>
+            <!-- Shopping Cart -->
+            <li class="list-inline-item">
+              <a class="{% if grand_total %}text-warning font-weight-bold{% else %}text-white{% endif %} nav-link"
+                href="{% url 'view_cart' %}">
+                <div class="text-center">
+                  <div><i class="fa-solid fa-cart-shopping"></i></div>
+                  <p class="my-0">
+                    <!-- Checks and formats total -->
+                    {% if grand_total %}
+                    ${{ grand_total|floatformat:2 }}
+                    {% else %}
+                    $0.00
+                    {% endif %}
+                  </p>
+                </div>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
-    <nav>
+      <!-- Desktop Search Bar -->
+      <div class="row d-none d-lg-flex">
+        <form class="form border" method="GET" action="{% url 'products' %}">
+          <div class="input-group search-box">
+            <input class="form-control search-bar-radius desktop-search-bar" type="text" name="q"
+              placeholder="Search for a product ...">
+            <div class="input-group-append desktop-search-bar-button">
+              <button class="form-control form-control desktop-search-bar-icon" type="submit">
+                <span class="icon">
+                  <i class="fas fa-search"></i>
+                </span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <!-- Mobile Navigation Menu -->
+      <div class="row d-lg-none d-block">
+        <div class="navbar navbar-expand-lg w-100">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
+            aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><i class="text-white fa-solid fa-bars"></i></span>
+          </button>
+          {% include 'includes/mobile-nav-header.html' %}
+          <div class="collapse navbar-collapse" id="main-nav">
+            {% include 'includes/mobile-main-nav.html' %}
+          </div>
+        </div>
+      </div>
+    </nav>
   </header>
 
 
   {% if messages %}
   <div class="message-container rounded">
     {% for message in messages %}
-        <!-- Using djang message levels to display correct message type -->
-        {% with message.level as level %}
-            {% if level == 40 %}
-                {% include 'includes/toasts/toast_error.html' %}
-            {% elif level == 30 %}
-                {% include 'includes/toasts/toast_warning.html' %}
-            {% elif level == 25 %}
-                {% include 'includes/toasts/toast_success.html' %}
-            {% else %}
-                {% include 'includes/toasts/toast_info.html' %}
-            {% endif %}
-        {% endwith %}
+    <!-- Using djang message levels to display correct message type -->
+    {% with message.level as level %}
+    {% if level == 40 %}
+    {% include 'includes/toasts/toast_error.html' %}
+    {% elif level == 30 %}
+    {% include 'includes/toasts/toast_warning.html' %}
+    {% elif level == 25 %}
+    {% include 'includes/toasts/toast_success.html' %}
+    {% else %}
+    {% include 'includes/toasts/toast_info.html' %}
+    {% endif %}
+    {% endwith %}
     {% endfor %}
   </div>
   {% endif %}
@@ -184,137 +246,136 @@
   {% endblock %}
 
   <main>
-  {% block content %}
-  {% endblock %}
+    {% block content %}
+    {% endblock %}
   </main>
 
   <!-- footer -->
   <div class="container-fluid footer-container {% if is_home_page %}mt-0{% endif %}">
     <footer class="text-black text-center text-lg-start bg-light">
-        <!-- footer sub container start -->
-        <div class="container p-4">
-            <!-- row start -->
-            <div class="row mt-4">
-                <!-- column 1 -->
-                <div class="col-lg-3 col-md-12 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-4"><strong>NexTech</strong></h5>
-                    <p class="light-grey-text">
-                      Your ultimate destination for cutting-edge computer components and tech accessories.
-                      Explore our vast selection for all your computing needs. NexTech - where innovation 
-                      meets convenience. 
-                    </p>
-                    <div class="my-4">
-                      <h5 class="text-uppercase mb-4"><strong>Subscribe to our Newsletter</strong></h5>
-                      <div class="d-flex justify-content-center">
-                        <form method="post" action="/contact/subscribe/" class="row" id="newsletter-form">
-                          {% csrf_token %}
-                          <div id="div_id_email" class="form-group col-md-8 col-sm-9 p-0">
-                              <div>
-                                  <input type="email" name="email" maxlength="100" class="form-control emailinput" placeholder="Your email" required id="id_email">
-                              </div>
-                          </div>
-                          <div class="col-md-4 col-sm-3" id="subscribe-btn">
-                              <button type="submit" class="btn btn-blue w-100">
-                                  <span class="icon">
-                                      <i class="fas fa-chevron-right"></i>
-                                  </span>
-                              </button>
-                          </div>
-                        </form>
-                      </div>
+      <!-- footer sub container start -->
+      <div class="container p-4">
+        <!-- row start -->
+        <div class="row mt-4">
+          <!-- column 1 -->
+          <div class="col-lg-3 col-md-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4"><strong>NexTech</strong></h5>
+            <p class="light-grey-text">
+              Your ultimate destination for cutting-edge computer components and tech accessories.
+              Explore our vast selection for all your computing needs. NexTech - where innovation
+              meets convenience.
+            </p>
+            <div class="my-4">
+              <h5 class="text-uppercase mb-4"><strong>Subscribe to our Newsletter</strong></h5>
+              <div class="d-flex justify-content-center">
+                <form method="post" action="/contact/subscribe/" class="row" id="newsletter-form">
+                  {% csrf_token %}
+                  <div id="div_id_email" class="form-group col-md-8 col-sm-9 p-0">
+                    <div>
+                      <input type="email" name="email" maxlength="100" class="form-control emailinput"
+                        placeholder="Your email" required id="id_email">
                     </div>
-                </div>
-                <!-- column 2 -->
-                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-4 pb-1"><strong>Helpful Links</strong></h5>
-                    <ul class="fa-ul">
-                        <li class="nav-item mb-3">
-                            <a class="footer-link" aria-label="Home" aria-current="page"
-                                href="{% url 'home' %}">Home</a>
-                        </li>
-                        <li class="nav-item mb-3">
-                            <a class="footer-link" aria-label="All Products" aria-current="page"
-                                href="{% url 'products' %}">Products</a>
-                        </li>
-                        <li class="nav-item mb-3">
-                          <a class="footer-link" aria-label="All Parts" aria-current="page"
-                              href="{% url 'products' %}?category=graphics_cards,cpus,memory,motherboards">Parts</a>
-                        </li>
-                        <li class="nav-item mb-3">
-                          <a class="footer-link" aria-label="All Systems" aria-current="page"
-                              href="{% url 'products' %}?category=gaming_pcs,office_pcs,laptops">Systems</a>
-                        </li>
-                        <li class="nav-item mb-3">
-                          <a class="footer-link" aria-label="All Offers" aria-current="page"
-                              href="{% url 'products' %}?category=new_arrivals,deals,clearance">Offers</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- column 3 -->
-                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-4 pb-1"><strong>Contact Us</strong></h5>
-                    <ul class="fa-ul">
-                        <li class="mb-3">
-                            <p>Do you have any questions or suggestions?</p>
-                            <span class="footer-link"><i class="fas fa-envelope"></i>
-                              <a href="{% url 'contact-form' %}" class="footer-link">Contact Form</a></span>
-                        </li>
-                        <li class="mb-3">
-                            <p>Do you need assistance? Give us a call</p>
-                            <span class="footer-link"><i class="fas fa-phone"></i> (057)
-                                934 6000</span>
-                        </li>
-                    </ul>
-                </div>
-                <!-- column 4 -->
-                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
-                    <h5 class="text-uppercase mb-4"><strong>We are here for you</strong></h5>
-                    <ul class="fa-ul">
-                        <li class="mb-3">
-                            <p>Monday - Thursday: <span class="open-hours">9:30 a.m - 6:00 p.m</span></p>
-                        </li>
-                        <li class="mb-3">
-                            <p>Friday: <span class="open-hours">9:30 a.m - 3:00 p.m</span></p>
-                        </li>
-                        <li class="mb-3">
-                            <p>Central European Time</p>
-                        </li>
-                    </ul>
-                    <!-- social links -->
-                    <div class="mt-4 footer-social-links">
-                        <!-- Instagram -->
-                        <a href="https://www.instagram.com/" target="_blank" class="btn btn-floating btn-lg"><i
-                                class="fab fa-instagram"></i></a>
-                        <!-- Facebook -->
-                        <a href="https://www.facebook.com/" target="_blank" class="btn btn-floating btn-lg"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <!-- Twitter -->
-                        <a href="https://www.twitter.com/" target="_blank" class="btn btn-floating btn-lg"><i
-                                class="fab fa-twitter"></i></a>
-                        <!-- Pinterest -->
-                        <a href="https://www.pinterest.com/" target="_blank" class="btn btn-floating btn-lg"><i
-                                class="fab fa-pinterest"></i></a>
-                        <!-- Google + -->
-                        <a href="https://myaccount.google.com/" target="_blank" class="btn btn-floating btn-lg"><i
-                                class="fab fa-google-plus-g"></i></a>
-                    </div>
-                </div>
-                <!-- row end -->
+                  </div>
+                  <div class="col-md-4 col-sm-3" id="subscribe-btn">
+                    <button type="submit" class="btn btn-blue w-100">
+                      <span class="icon">
+                        <i class="fas fa-chevron-right"></i>
+                      </span>
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
-            <!-- footer sub container end -->
+          </div>
+          <!-- column 2 -->
+          <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4 pb-1"><strong>Helpful Links</strong></h5>
+            <ul class="fa-ul">
+              <li class="nav-item mb-3">
+                <a class="footer-link" aria-label="Home" aria-current="page" href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="nav-item mb-3">
+                <a class="footer-link" aria-label="All Products" aria-current="page"
+                  href="{% url 'products' %}">Products</a>
+              </li>
+              <li class="nav-item mb-3">
+                <a class="footer-link" aria-label="All Parts" aria-current="page"
+                  href="{% url 'products' %}?category=graphics_cards,cpus,memory,motherboards">Parts</a>
+              </li>
+              <li class="nav-item mb-3">
+                <a class="footer-link" aria-label="All Systems" aria-current="page"
+                  href="{% url 'products' %}?category=gaming_pcs,office_pcs,laptops">Systems</a>
+              </li>
+              <li class="nav-item mb-3">
+                <a class="footer-link" aria-label="All Offers" aria-current="page"
+                  href="{% url 'products' %}?category=new_arrivals,deals,clearance">Offers</a>
+              </li>
+            </ul>
+          </div>
+          <!-- column 3 -->
+          <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4 pb-1"><strong>Contact Us</strong></h5>
+            <ul class="fa-ul">
+              <li class="mb-3">
+                <p>Do you have any questions or suggestions?</p>
+                <span class="footer-link"><i class="fas fa-envelope"></i>
+                  <a href="{% url 'contact-form' %}" class="footer-link">Contact Form</a></span>
+              </li>
+              <li class="mb-3">
+                <p>Do you need assistance? Give us a call</p>
+                <span class="footer-link"><i class="fas fa-phone"></i> (057)
+                  934 6000</span>
+              </li>
+            </ul>
+          </div>
+          <!-- column 4 -->
+          <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4"><strong>We are here for you</strong></h5>
+            <ul class="fa-ul">
+              <li class="mb-3">
+                <p>Monday - Thursday: <span class="open-hours">9:30 a.m - 6:00 p.m</span></p>
+              </li>
+              <li class="mb-3">
+                <p>Friday: <span class="open-hours">9:30 a.m - 3:00 p.m</span></p>
+              </li>
+              <li class="mb-3">
+                <p>Central European Time</p>
+              </li>
+            </ul>
+            <!-- social links -->
+            <div class="mt-4 footer-social-links">
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/" target="_blank" class="btn btn-floating btn-lg"><i
+                  class="fab fa-instagram"></i></a>
+              <!-- Facebook -->
+              <a href="https://www.facebook.com/" target="_blank" class="btn btn-floating btn-lg"><i
+                  class="fab fa-facebook-f"></i></a>
+              <!-- Twitter -->
+              <a href="https://www.twitter.com/" target="_blank" class="btn btn-floating btn-lg"><i
+                  class="fab fa-twitter"></i></a>
+              <!-- Pinterest -->
+              <a href="https://www.pinterest.com/" target="_blank" class="btn btn-floating btn-lg"><i
+                  class="fab fa-pinterest"></i></a>
+              <!-- Google + -->
+              <a href="https://myaccount.google.com/" target="_blank" class="btn btn-floating btn-lg"><i
+                  class="fab fa-google-plus-g"></i></a>
+            </div>
+          </div>
+          <!-- row end -->
         </div>
-        <!-- copyright notice -->
-        <div class="text-center p-3 footer-copyright">
-            NexTech © 2024. All rights reserved.
-            <!-- footer main container end -->
-        </div>
+        <!-- footer sub container end -->
+      </div>
+      <!-- copyright notice -->
+      <div class="text-center p-3 footer-copyright">
+        NexTech © 2024. All rights reserved.
+        <!-- footer main container end -->
+      </div>
     </footer>
-</div>
-<!-- End of Footer -->
+  </div>
+  <!-- End of Footer -->
 
   {% block postloadjs %}
-  <script type="text/javascript">
-
+  <script>
     // Shows all toasts rendered in messages container
     $('.toast').toast('show');
 
@@ -340,8 +401,6 @@
     });
   </script>
   {% endblock %}
-
-
 </body>
 
 </html>
