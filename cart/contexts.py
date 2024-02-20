@@ -3,6 +3,7 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
 
+
 def cart_contents(request):
 
     cart_items = []
@@ -23,7 +24,6 @@ def cart_contents(request):
             'product': product,
         })
 
-
     # Calculate delivery under threshold
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(settings.STANDARD_DELIVERY_PERCENTAGE / 100)
@@ -32,9 +32,9 @@ def cart_contents(request):
     else:
         delivery = 0
         free_delivery_target = 0
-    
+
     grand_total = delivery + total
-    
+
     # Add all items to context for use in templates across the site
     context = {
         'cart_items': cart_items,
