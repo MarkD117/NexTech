@@ -95,11 +95,7 @@ class StripeWH_Handler:
         
         order_exists = False
         attempt = 1
-        # While loop runs giving the webhook 5 attempts to
-        # find the existing order, if it cannot find one
-        # after 5 attempts, the order will be created
-        # automatically by the webhook. This allows the
-        # view time to submit the form and create the order.
+        # While loop runs giving the webhook 5 attempts to find existing order
         while attempt <= 5:
             try:
                 order = Order.objects.get(
@@ -153,12 +149,13 @@ class StripeWH_Handler:
                 # Code copied from checkout view.
                 for item_id, item_data in json.loads(cart).items():
                     product = Product.objects.get(id=item_id)
-                    order_line_item = OrderLineItem(
-                        order=order,
-                        product=product,
-                        quantity=item_data,
-                    )
-                    order_line_item.save()
+                    if isinstance(item_data, int):
+                        order_line_item = OrderLineItem(
+                            order=order,
+                            product=product,
+                            quantity=item_data,
+                        )
+                        order_line_item.save()
             # If anything goes wrong, the order will be deleted if
             # one was created and return 500 server error response
             # to Stripe. This will cause Stripe to automatically
