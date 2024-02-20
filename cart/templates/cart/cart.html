@@ -134,14 +134,14 @@
 {% block postloadjs %}
 {{ block.super }}
 <!-- When back to top button clicked, window scrolls to top -->
-<script type="text/javascript">
+<script>
     $('.top-link').click(function(e) {
         window.scrollTo(0,0)
     })
 </script>
 {% include 'products/includes/quantity_input_script.html' %}
 
-<script type="text/javascript">
+<script>
     // Update quantity on click
     $('.update-link').click(function(e) {
         // Find the form associated with the clicked button
