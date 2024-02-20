@@ -10,14 +10,15 @@ def subscribe(request):
             form.save()
             messages.success(request, 'Successfully signed up to newsletter!')
             return redirect('home')
+        else:
+            messages.error(
+                request,
+                'Uh oh! Looks like you entered an invalid email address '
+                'or you have already signed up to our newsletter!'
+            )
+            return redirect('home')
     else:
-        form = NewsletterForm()
-
-    context = {
-        'NewsletterForm': form
-    }
-
-    return render(request, 'contact/newsletter.html', context)
+        return redirect('home')
 
 
 def contact(request):
@@ -25,7 +26,8 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Your message has been sent to the team!')
+            messages.success(
+                request, 'Your message has been sent to the team!')
             return redirect('home')
     else:
         form = ContactForm()
