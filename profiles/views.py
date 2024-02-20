@@ -59,18 +59,3 @@ def order_history(request, order_number):
     }
 
     return render(request, template, context)
-
-
-# def upload_profile_picture(request):
-#     if request.method == 'POST':
-#         form = ProfilePictureForm(request.POST, request.FILES, instance=request.user.userprofile)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('profile')
-#     else:
-#         form = ProfilePictureForm()
-
-#     context = {
-#         'form': 'form'
-#     }
-#     return render(request, 'profiles/upload_profile_picture.html', context)

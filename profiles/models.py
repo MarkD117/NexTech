@@ -12,7 +12,6 @@ class UserProfile(models.Model):
     delivery preferences and order history.
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    profile_image = models.ImageField(null=True, blank=True)
     # Optional default delivery information that users can save
     default_phone_number = models.CharField(max_length=20, null=True, blank=True)
     default_street_address1 = models.CharField(max_length=80, null=True, blank=True)

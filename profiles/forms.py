@@ -35,9 +35,3 @@ class UserProfileForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'profile-form-input'
             self.fields[field].label = False
-
-
-class ProfilePictureForm(forms.ModelForm):
-    class Meta:
-        model = UserProfile
-        fields = ['profile_image']

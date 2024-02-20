@@ -20,18 +20,12 @@ profile html
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="heading-font mb-4">My Profile</h2>
+                <h2 class="heading-font mb-4">My Profile - {{ user.username }}</h2>
                 <hr>
             </div>
         </div>
         <div class="row">
             <div class="col-12 col-lg-6">
-                {% if profile.profile_image %}
-                <img width="75" height="75" style="border-radius: 37.25px;" src="{{ profile.profile_image }}" alt="User Profile Image">
-                {% else %}
-                <img width="75" height="75" style="border-radius: 37.25px;" src="{{ MEDIA_URL }}noprofileimage.webp" alt="No Profile Image">
-                {% endif %}
-                <span class="heading-font ml-3"> {{ user.username }}</span>
                 <p class="text-muted">Default Delivery Information</p>
                 <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
