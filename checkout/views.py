@@ -1,4 +1,10 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render,
+    redirect,
+    reverse,
+    HttpResponse,
+    get_object_or_404
+)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -12,6 +18,7 @@ from cart.contexts import cart_contents
 
 import stripe
 import json
+
 
 @require_POST
 def cache_checkout_data(request):
@@ -32,6 +39,7 @@ def cache_checkout_data(request):
             processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
 
+
 def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
@@ -43,7 +51,7 @@ def checkout(request):
         return redirect(reverse('products'))
 
     if request.method == 'POST':
-         # Process checkout form submission
+        # Process checkout form submission
         cart = request.session.get('cart', {})
         form_data = {
             'full_name': request.POST['full_name'],
@@ -56,9 +64,9 @@ def checkout(request):
             'street_address2': request.POST['street_address2'],
             'county': request.POST['county'],
         }
-        
+
         order_form = OrderForm(form_data)
-        
+
         if order_form.is_valid():
             order = order_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
@@ -77,22 +85,26 @@ def checkout(request):
                     order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your cart wasn't found in our database. "
+                        "One of the products in your cart "
+                        "wasn't found in our database. "
                         "Please call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_cart'))
             # Check if save info box selected
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(
+                reverse('checkout_success', args=[order.order_number]))
         else:
-            messages.error(request, 'There was an error with your form. \
-                Please double check your information.')
+            messages.error(request,
+                           'There was an error with your form. \
+                            Please double check your information.')
     else:
         cart = request.session.get('cart', {})
         # Prevents manually entering checkout url
         if not cart:
-            messages.error(request, "There's nothing in your cart at the moment")
+            messages.error(
+                request, "There's nothing in your cart at the moment")
             return redirect(reverse('products'))
 
         current_cart = cart_contents(request)
@@ -145,7 +157,7 @@ def checkout_success(request, order_number):
     # Checks if user wants to save their information
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
-    
+
     # Save info to profile and attach order
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
@@ -166,15 +178,15 @@ def checkout_success(request, order_number):
             user_profile_form = UserProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
                 user_profile_form.save()
-    
+
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
-    
+
     # Delete shopping cart from the current session
     if 'cart' in request.session:
         del request.session['cart']
-    
+
     template = 'checkout/checkout_success.html'
     context = {
         'order': order,

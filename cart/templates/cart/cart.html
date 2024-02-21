@@ -92,14 +92,16 @@
                                 <td class="py-3">
                                     {% include "cart/product-info.html" %}
                                     {% include "cart/quantity-form.html" %}
-                                    <button class="update-link mobile-update-btn btn btn-sm btn-primary rounded-pill">
-                                        <span class="text-white small">Update</span>
-                                        <i class="fa-solid fa-rotate-right"></i>
-                                    </button>
-                                    <button class="remove-item-mobile mobile-remove-btn btn btn-sm btn-danger rounded-pill" id="mobile-remove_{{ item.item_id }}">                                        
-                                        <span class="text-white small">Remove</span>
-                                        <i class="fa-solid fa-trash-can"></i>
-                                    </button>
+                                    <div class="mobile-center-buttons">
+                                        <button class="update-link mobile-update-btn btn btn-sm btn-primary rounded-pill">
+                                            <span class="text-white small">Update</span>
+                                            <i class="fa-solid fa-rotate-right"></i>
+                                        </button>
+                                        <button class="remove-item-mobile mobile-remove-btn btn btn-sm btn-danger rounded-pill" id="mobile-remove_{{ item.item_id }}">                                        
+                                            <span class="text-white small">Remove</span>
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </button>
+                                    </div>
                                 </td>
                                 <td class="py-3">
                                     <p class="my-0"><strong>${{ item.product.price | calc_subtotal:item.quantity }}</strong></p>

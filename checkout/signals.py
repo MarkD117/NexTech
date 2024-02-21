@@ -5,7 +5,7 @@ from .models import OrderLineItem
 
 
 # Instance, is the instance of the model that sent the signal.
-# Created, is a boolean sent by django referring to whether 
+# Created, is a boolean sent by django referring to whether
 # this is a new instance or one being updated.
 
 # Handles signals from the post_save event
@@ -16,6 +16,7 @@ def update_on_save(sender, instance, created, **kwargs):
     """
     # Gets order this specific lineitem is related to and updates total
     instance.order.update_total()
+
 
 # Handles signals from the post_delete event
 @receiver(post_delete, sender=OrderLineItem)
