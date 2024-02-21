@@ -29,8 +29,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['8000-markd117-nextech-jaoebjczu8z.ws-eu108.gitpod.io', 'nextech-5db9177526a4.herokuapp.com']
-
+if 'DEVELOPMENT' in os.environ:
+    ALLOWED_HOSTS = [os.environ.get('LOCAL_HOSTNAME')]
+else:
+    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
 
 # Application definition
 
@@ -194,7 +196,7 @@ if 'USE_AWS' in os.environ:
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
     }
-    
+
     # Bucket Config
     AWS_STORAGE_BUCKET_NAME = 'nextech-md'
     AWS_S3_REGION_NAME = 'eu-west-1'
