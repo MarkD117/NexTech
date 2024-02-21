@@ -4,6 +4,7 @@ from .forms import NewsletterForm, ContactForm
 
 
 def subscribe(request):
+    """ This view handles subscribing to the newsletter """
     if request.method == 'POST':
         form = NewsletterForm(request.POST)
         if form.is_valid():
@@ -22,6 +23,7 @@ def subscribe(request):
 
 
 def contact(request):
+    """ This view handles submitting the contact form """
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
@@ -31,7 +33,7 @@ def contact(request):
             return redirect('home')
     else:
         form = ContactForm()
-    
+
     context = {
         'ContactForm': form
     }

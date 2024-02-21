@@ -1,6 +1,7 @@
 from django import forms
 from .models import NewsletterSubscriber, Contact
 
+
 class NewsletterForm(forms.ModelForm):
     class Meta:
         model = NewsletterSubscriber
@@ -9,14 +10,14 @@ class NewsletterForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['email'].label = False
-        self.fields['email'].widget.attrs.update({'class': 'form-control', 'placeholder': 'Your email'})
+        self.fields['email'].widget.attrs.update(
+            {'class': 'form-control', 'placeholder': 'Your email'})
 
 
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields = '__all__'
-    
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
