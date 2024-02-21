@@ -55,6 +55,17 @@ In terms of accent colors, Chrysler Blue takes center stage in the navigation me
 
 This font was sourced from [Google Fonts](https://fonts.google.com/).
 
-- <img src="documentation/other/icons/arrow-up-solid.svg" width="50" height="50"> icon used back to top button.
+- Up Arrow icon used back to top button.
+- Shopping Cart icon used for cart navigation items.
+- Chevron Left used for back buttons.
+- Chevron Right used for newsletter submit button.
+- Hastag used for categories on product cards.
+- Star used for product ratings.
+- Lock used for checkout buttons.
+- Mangifying Glass used for search functions.
+- Rotate Right Arrow used for update product buttons.
+- Trash Can used for delete product from cart buttons.
+- User icon used for user profile
+- Bars icon used for mobile navigation dropdown.
 
 Icons sourced from [Font Awesome](https://fontawesome.com/).
