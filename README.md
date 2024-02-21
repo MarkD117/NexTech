@@ -306,3 +306,11 @@ TThe site footer was designed to serve dual purposes: offering users additional 
 <p align="center">
     <img src="documentation/features/mobile-footer.png"/>
 </p>
+
+### **Hero Background Video**
+
+The home page features a captivating background video showcasing computer games, a high-performance gaming PC, and its components in action. This dynamic visual element instantly helps users quickly understand what the site is about and what it has to offer.
+
+<p align="center">
+    <img src="documentation/features/hero-bg-video.png"/>
+</p>
