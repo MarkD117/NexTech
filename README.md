@@ -433,9 +433,38 @@ The quantity form allows users to add a defined quantity of the specific product
 
 ### Stock Tag
 
-The stock tag is currently only cosmetic that displays on all products. Future implementation of giving the stock tag a function could be added in the future.
+The stock tag is currently only a cosmetic item that displays on all products. Future implementation of giving the stock tag a function could be added in the future. More mentioned in the [Future Features](#future-features).
 
 <p align="center">
     <img src="documentation/features/in-stock.png"/>
     <img src="documentation/features/not-in-stock.png"/>
+</p>
+
+### **The Cart**
+
+Users can add products to their cart from the products detail page. A message will show confirming the successful addition of a product to their cart. A summary of items within the cart will be shown in he message and the user can then click to view their cart. 
+
+<p align="center">
+    <img src="documentation/features/cart-success-message.png"/>
+</p>
+
+### Shopping Cart Page
+
+In the cart page, the user can view a summary of the products they entered including information such as the name, sku, seleted quantity and price. Users may also opt to edit the quantity of items within the cart. This can be done by adjusting the quantity form and clicking the update button. Alternatively, users can remove items from their cart by clicking the remove button.
+
+below the product information is the billing information. If multiple products have been added, the total price of all products will be calculated and displayed here. Delivery on orders over $150 is free. This is denoted by messages and information on the cart page informing the users how much more they have to spend to get free delivery.
+
+Below the billing information are two buttons that allow the user to continue to the checkout page or to go back to the products page.
+
+- Delivery Threshold Met
+
+<p align="center">
+    <img src="documentation/features/cart-page.png"/>
+</p>
+
+- Delivery Threshold Not Met
+
+<p align="center">
+    <img src="documentation/features/delivery-message.png"/>
+    <img src="documentation/features/delivery-threshold.png"/>
 </p>
