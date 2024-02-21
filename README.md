@@ -120,7 +120,7 @@ Click on a user story below to be directed to the Kanban project to examine any 
 
 ####  Incompleted User Stories
 
-The following user stories have been marked as incomplete, as they were considered non-essential for the core functionality of the site at this stage. However, they represent potential [Future Features](#future-features) to be implemented in future iterations. While these issues were initially closed upon completing the project's code, they have since been reopened, as I am eager to revisit and incorporate them into a future patch of the site.
+The following user stories have been marked as incomplete, as they were considered non-essential for the core functionality of the site at this stage. However, they represent potential [Future Features](#future-features) to be implemented in future iterations. While these issues have been closed and moved to the Out of Scope column within the Kanban board.I am eager to revisit and incorporate them into a future patch of the site.
 
 The majority of the 18 out of 45 incomplete user stories pertain to a single app known as the forums app, along with the associated admin logic. While these features were deemed non-essential for the core functionality of the site during the initial development phase, they again represent potential additions for future updates.
 
@@ -322,10 +322,55 @@ TThe site footer was designed to serve dual purposes: offering users additional 
     <img src="documentation/features/mobile-footer.png"/>
 </p>
 
+### **Home Page**
+
 ### **Hero Background Video**
 
 The home page features a captivating background video showcasing computer games, a high-performance gaming PC, and its components in action. This dynamic visual element instantly helps users quickly understand what the site is about and what it has to offer.
 
 <p align="center">
     <img src="documentation/features/hero-bg-video.png"/>
+</p>
+
+### **Account Pages**
+
+### Register Page
+
+If a new site user does not yet have an account, they can sign up using the register page. On this page they are prompted to enter a username, optional e-mail, and password. Once the information is correctly entered, the user can click the sign up button and they will be automatically logged into the site and redirected to the home page.
+
+<p align="center">
+    <img src="documentation/features/register.png"/>
+</p>
+
+### Login Page
+
+If a user already has an account and wishes to log in, they can navigate to the Login page. Here, they can input their username and password to gain access to the site. Additionally, users have the option to choose whether they want the site to remember their login credentials for future visits. In case a user unintentionally lands on the login page without having created an account, a brief message prompts them to first sign up. This message includes a link directing them to the Register page for easy access to the registration process.
+
+<p align="center">
+    <img src="documentation/features/login.png"/>
+</p>
+
+### Logout Page
+
+When a user is already logged into the site and wishes to log out, they can do so through the Logout page. Clicking on the logout navigation link directs the user to this page. Here, an on-screen prompt appears, asking the user to confirm if they want to sign out from the site. If the user selects the sign-out option, they are immediately logged out from the site, ensuring a seamless and efficient logout process.
+
+<p align="center">
+    <img src="documentation/features/logout.png"/>
+</p>
+
+### Password Reset
+
+If a user has forgotten their passowrd, they can click a reset password link loctated on the login page. This link will display a prompt to enter an email. Upon submitting a valid email, a message will appear notifying the user a link has been sent to the email to reset the account password.
+
+<p align="center">
+    <img src="documentation/features/reset-password.png"/>
+</p>
+
+### Confirmation Email
+
+When first registering an account on the site, a registration email will be sent to the users email. The email contains a link that allows them to confirm their email and access the site.
+
+<p align="center">
+    <img src="documentation/features/verify-email.png"/>
+    <img src="documentation/features/confirm-email.png"/>
 </p>

@@ -14,8 +14,7 @@ def subscribe(request):
         else:
             messages.error(
                 request,
-                'Uh oh! Looks like you entered an invalid email address '
-                'or you have already signed up to our newsletter!'
+                'You have already signed up to our newsletter!'
             )
             return redirect('home')
     else:
