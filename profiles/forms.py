@@ -1,8 +1,8 @@
 from django import forms
 from .models import UserProfile
 
-# Similar form class to checkout form
 
+# Similar form class to checkout form
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
