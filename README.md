@@ -278,6 +278,8 @@ The NexTech site boasts a multi-page layout accessible via a top-mounted navigat
 
 Notably, certain navigation options dynamically adjust based on user authentication status. For instance, visitors who aren't logged in will encounter prompts to register or log in. In contrast, authenticated users gain access to additional features such as the ability to log out, manage drafts, and add projects. Moreover, the 'Product Management' link remains exclusive to site administrators, ensuring restricted access solely for authorized personnel.
 
+On the home page, the navigation menu adopts a stylish feature where its background becomes transparent when positioned at the top of the viewport and only adopts its background color upon scrolling. This design choice ensures the readability of menu options while seamlessly integrating with the captivating background video, allowing it to remain the focal point of the page.
+
 - Desktop
 
 <p align="center">
@@ -289,6 +291,12 @@ Notably, certain navigation options dynamically adjust based on user authenticat
 <p align="center">
     <img src="documentation/features/mobile-nav.png"/>
     <img src="documentation/features/mobile-nav-dropdown.png"/>
+</p>
+
+- Transparent Nav bar
+
+<p align="center">
+    <img src="documentation/features/transparent-nav.png"/>
 </p>
 
 ### Site Footer
