@@ -478,3 +478,12 @@ Below the order summary is the total cost of the order which is calculated from 
 <p align="center">
     <img src="documentation/features/checkout-page.png"/>
 </p>
+
+### **Order Confirmation**
+
+Once the order has been submitted and the payment has been completed. The user is presented with the checkout success page detailing their order information, order details, delivery infomation and billing information. As well as that, the user will get a success message explaining that a confirmation email has been sent to the users email. 
+
+<p align="center">
+    <img src="documentation/features/order-confirmation-page.png"/>
+    <img src="documentation/features/order-confirmation-email.png"/>
+</p>
