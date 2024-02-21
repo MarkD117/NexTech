@@ -496,3 +496,30 @@ If a user has created an account, they can access the profile page in the accoun
     <img src="documentation/features/profile-page.png"/>
     <img src="documentation/features/past-order-message.png"/>
 </p>
+
+### **The Wishlist**
+
+### Wishlist Button
+
+If a user is logged in, an **Add to Wishlist** will appear on the procucts detail page. Upon clicking the button, the button will change to **Remove from Wishlist** and the product will be added to the wishlist along with a success message.
+
+<p align="center">
+    <img src="documentation/features/wishlist-add.png"/>
+    <img src="documentation/features/wishlist-remove.png"/>
+</p>
+
+### Wishlist Page
+
+Site users must be logged in to access the wishlist page. On the wishlist page, users can see any products that they have added to their wishlist. This displays the product image, name, sku and unit price. If the wishlist is empty, text informing the user that they do not have anything in their wishlist appears. Users can also opt to remove items from their wishlist by clicking the remove button.
+
+- Empty Wishlist
+
+<p align="center">
+    <img src="documentation/features/empty-wishlist.png"/>
+</p>
+
+- Wishlist Page
+
+<p align="center">
+    <img src="documentation/features/wishlist.png"/>
+</p>
