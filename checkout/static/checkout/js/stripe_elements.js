@@ -127,5 +127,5 @@ form.addEventListener('submit', function(ev) {
     // Fail if view sends a 400 bad request response
     }).fail(function () {
         location.reload();
-    })
+    });
 });
