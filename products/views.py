@@ -7,6 +7,7 @@ from django.db.models.functions import Lower
 from .models import Product, ProductCategory
 from .forms import ProductForm
 
+
 def all_products(request):
     """ This view shows all products, including sorting and search queries """
 
@@ -37,21 +38,25 @@ def all_products(request):
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = ProductCategory.objects.filter(name__in=categories)
-        
+
         # Return products whos name or description match the search query
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "Please enter a keyword or phrase to initiate the search!")
+                messages.error(
+                    request,
+                    "Please enter a keyword or phrase to initiate the search!"
+                )
                 return redirect(reverse('products'))
-            
+
             # Allowing queries to be filtered based on name OR description
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = (
+                Q(name__icontains=query) | Q(description__icontains=query))
             products = products.filter(queries)
-        
+
     # Return current sorting methodology to the template
     current_sorting = f'{sort}_{direction}'
-            
+
     context = {
         'products': products,
         'search_term': query,
@@ -89,10 +94,13 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to add product. Please ensure the form is valid.'
+                )
     else:
         form = ProductForm()
-        
+
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -117,7 +125,10 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to update product. Please ensure the form is valid.'
+                )
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
