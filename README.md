@@ -7,3 +7,19 @@ The live project can be accessed [here](https://nextech-5db9177526a4.herokuapp.c
 <p align="center">
     <img src="documentation/other/am-i-responsive-img.png"/>
 </p>
+
+## Index – Table of Contents
+
+* [UI/UX](#uiux)
+* [Agile Development](#agile-development)
+* [User Stories](#user-stories)
+* [Database Structure](#database-structure)
+* [Wireframes](#wireframes)
+* [Features](#features)
+* [Technologies Used](#technologies-used)
+* [Testing](#testing)
+* [Bug Fixes](#bug-fixes)
+* [Known Bugs](#known-bugs)
+* [Deployment](#deployment)
+* [Credits](#credits)
+* [Acknowledgements](#acknowledgements)
