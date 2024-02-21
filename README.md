@@ -374,3 +374,68 @@ When first registering an account on the site, a registration email will be sent
     <img src="documentation/features/verify-email.png"/>
     <img src="documentation/features/confirm-email.png"/>
 </p>
+
+### **Products Page**
+
+### Product Cards
+
+A clear list of products is presented to the user in the form of products cards. On each of the product cards are the product image, name, price, category and rating. Users do not need an account to view the products.
+
+<p align="center">
+    <img src="documentation/features/products-page.png"/>
+</p>
+
+### Filters
+
+Users can choose from a selection of filters to sort the list of products to suit their needs.
+
+<p align="center">
+    <img src="documentation/features/filters.png"/>
+</p>
+
+### Product Categories
+
+Users can select individual categories to sort the curated list of products. The categories can be accessed from the navigation menus or can be accessed directly from the product cards by clicking the category.
+
+Once a category has been selected, all products within the chosen category are displayed and badges with the selected categories can be accessed below the products heading. When these badges are clicked, the page will redirect to the selected category.
+
+<p align="center">
+    <img src="documentation/features/product-categories.png"/>
+</p>
+
+### Product Search
+
+The search icon can be selected at any point whilst viewing the site. This will show a search bar prompting for input. Search querys entered to this search bar will return results based on matching results within the product names of descriptions.
+
+- Desktop
+
+<p align="center">
+    <img src="documentation/features/desktop-search.png"/>
+</p>
+
+- Mobile
+
+<p align="center">
+    <img src="documentation/features/mobile-search.png"/>
+</p>
+
+### **Product Detail Page**
+
+### Product Details
+
+Upon clicking the product image, the user is redirected to the product detail page of that specific product. There is more information shown such as if the product is in stock, the option to add to a wishlist, product description and a quantity form.
+
+The quantity form allows users to add a defined quantity of the specific product to their cart. The plus and minus buttons may be used to increment the quantity. Below the product information are two buttons allowing users to add the product to their shopping cart or to return to the products page.
+
+<p align="center">
+    <img src="documentation/features/product-detail.png"/>
+</p>
+
+### Stock Tag
+
+The stock tag is currently only cosmetic that displays on all products. Future implementation of giving the stock tag a function could be added in the future.
+
+<p align="center">
+    <img src="documentation/features/in-stock.png"/>
+    <img src="documentation/features/not-in-stock.png"/>
+</p>
