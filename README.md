@@ -157,3 +157,115 @@ Furthermore, it's worth noting that the profile image field in the UserProfile m
 <p align="center">
     <img src="documentation/other/initial-database-structure.png"/>
 </p>
+
+## Wireframes
+
+During the planning stages, I  created wireframes for all pages of the site. [Balsamiq](https://balsamiq.com/wireframes) was used to design the digital wireframes. All wireframes can be seen below.
+
+### Home Page Wireframes
+
+<details>
+<summary>Click to see the Home Page Wireframes</summary>
+
+| Type | Image |
+| --- | --- |
+| Desktop | ![screenshot](documentation/wireframes/home-page-desktop.png) |
+| Mobile | ![screenshot](documentation/wireframes/home-page-mobile.png) |
+
+</details>
+
+### Products Page Wireframes
+
+<details>
+<summary>Click to see the Products Page Wireframes</summary>
+
+| Type | Image |
+| --- | --- |
+| Desktop | ![screenshot](documentation/wireframes/products-page-desktop.png) |
+| Mobile | ![screenshot](documentation/wireframes/products-page-mobile.png) |
+
+</details>
+
+### Product Detail Page Wireframes
+
+<details>
+<summary>Click to see Product Detail Page Wireframes</summary>
+
+| Type | Image |
+| --- | --- |
+| Desktop | ![screenshot](documentation/wireframes/product-detail-page-desktop.png) |
+| Mobile | ![screenshot](documentation/wireframes/product-detail-page-mobile.png) |
+
+</details>
+
+### Shopping Cart Page Wireframes
+
+<details>
+<summary>Click to see the Shopping Cart Page Wireframes</summary>
+
+| Type | Image |
+| --- | --- |
+| Desktop | ![screenshot](documentation/wireframes/cart-page-desktop.png) |
+| Mobile | ![screenshot](documentation/wireframes/cart-page-mobile.png) |
+
+</details>
+
+### Checkout Page Wireframes
+
+<details>
+<summary>Click to see the Checkout Page Wireframes</summary>
+
+| Type | Image |
+| --- | --- |
+| Desktop | ![screenshot](documentation/wireframes/checkout-page-desktop.png) |
+| Mobile | ![screenshot](documentation/wireframes/checkout-page-mobile.png) |
+
+</details>
+
+### Order Confirmation Page Wireframes
+
+<details>
+<summary>Click to see the Order Confirmation Page Wireframes</summary>
+
+| Type | Image |
+| --- | --- |
+| Desktop | ![screenshot](documentation/wireframes/order-confirmation-page-desktop.png) |
+| Mobile | ![screenshot](documentation/wireframes/order-confirmation-page-mobile.png) |
+
+</details>
+
+### Profile Page Wireframes
+
+<details>
+<summary>Click to see the Profile Page Wireframes</summary>
+
+| Type | Image |
+| --- | --- |
+| Desktop | ![screenshot](documentation/wireframes/profile-page-desktop.png) |
+| Mobile | ![screenshot](documentation/wireframes/profile-page-mobile.png) |
+
+</details>
+
+### Product Management Page Wireframes
+
+<details>
+<summary>Click to see the Product Management  Page Wireframes</summary>
+
+| Type | Image |
+| --- | --- |
+| Desktop | ![screenshot](documentation/wireframes/product-management-page-desktop.png) |
+| Mobile | ![screenshot](documentation/wireframes/product-management-page-mobile.png) |
+
+</details>
+
+### Contact Form Page Wireframes
+
+<details>
+<summary>Click to see the Contact Form Page Wireframes</summary>
+
+| Type | Image |
+| --- | --- |
+| Desktop | ![screenshot](documentation/wireframes/contact-form-page-desktop.png) |
+| Mobile | ![screenshot](documentation/wireframes/contact-form-page-mobile.png) |
+
+</details>
