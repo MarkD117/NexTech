@@ -523,3 +523,11 @@ Site users must be logged in to access the wishlist page. On the wishlist page, 
 <p align="center">
     <img src="documentation/features/wishlist.png"/>
 </p>
+
+### **Contact Form**
+
+The contact form is a page that can be accessed through the site footer. Users can enter information to the relevant fields and upon submission, they will be redirected to the home page and a success message will appear.
+
+<p align="center">
+    <img src="documentation/features/contact-form.png"/>
+</p>
