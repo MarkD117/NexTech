@@ -468,3 +468,13 @@ Below the billing information are two buttons that allow the user to continue to
     <img src="documentation/features/delivery-message.png"/>
     <img src="documentation/features/delivery-threshold.png"/>
 </p>
+
+### **Checkout**
+
+Within The checkout page is a form that the user must complete in order to perform a successful checkout. Users can opt to save the delivery information to their profile. This information will then be auto filled within the form upon the next visit to the checkout page. If the user is logged in, they can access their profile from the account menu to view this saved delivery information. Also contained within the checkout page is a detailed order summary, showing each product image, name, sku, quantity and subtotal price. 
+
+Below the order summary is the total cost of the order which is calculated from the products the user has added to their cart. The checkout features a Secure and Easy Payment System that utilises stripe webhooks for safe and efficient transactions. At the bottom of the checkout, there are buttons that allow the user to complete their order or redirect back to the shopping cart. There is also a message that notifies the user that their card will be charged a certain amount.
+
+<p align="center">
+    <img src="documentation/features/checkout-page.png"/>
+</p>
