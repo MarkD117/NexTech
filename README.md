@@ -269,3 +269,40 @@ During the planning stages, I  created wireframes for all pages of the site. [Ba
 | Mobile | ![screenshot](documentation/wireframes/contact-form-page-mobile.png) |
 
 </details>
+
+## Features
+
+### Navigation Menu
+
+The NexTech site boasts a multi-page layout accessible via a top-mounted navigation bar. Developed using Bootstrap, the navigation bar underwent customizations tailored to the site's unique requirements. Featuring a sleek and responsive design, the navigation menu seamlessly adapts to both mobile and desktop layouts, complemented by a stylized logo for enhanced branding.
+
+Notably, certain navigation options dynamically adjust based on user authentication status. For instance, visitors who aren't logged in will encounter prompts to register or log in. In contrast, authenticated users gain access to additional features such as the ability to log out, manage drafts, and add projects. Moreover, the 'Product Management' link remains exclusive to site administrators, ensuring restricted access solely for authorized personnel.
+
+- Desktop
+
+<p align="center">
+    <img src="documentation/features/desktop-nav.png"/>
+</p>
+
+- Mobile
+
+<p align="center">
+    <img src="documentation/features/mobile-nav.png"/>
+    <img src="documentation/features/mobile-nav-dropdown.png"/>
+</p>
+
+### Site Footer
+
+TThe site footer was designed to serve dual purposes: offering users additional information and enhancing website functionality. It contains a brief description of the site, a convenient newsletter sign-up form, essential navigation links, contact details, and a direct link to the contact form. Designed with responsiveness in mind, the footer seamlessly adjusts to both mobile and desktop layouts, ensuring optimal accessibility across all devices.
+
+- Desktop
+
+<p align="center">
+    <img src="documentation/features/desktop-footer.png"/>
+</p>
+
+- Mobile
+
+<p align="center">
+    <img src="documentation/features/mobile-footer.png"/>
+</p>
