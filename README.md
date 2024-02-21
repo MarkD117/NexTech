@@ -487,3 +487,12 @@ Once the order has been submitted and the payment has been completed. The user i
     <img src="documentation/features/order-confirmation-page.png"/>
     <img src="documentation/features/order-confirmation-email.png"/>
 </p>
+
+### **Profile Page**
+
+If a user has created an account, they can access the profile page in the account menu. On this page, they can see their saved delivery information and order history. From this page, users can update their saved delivery information and changes will be reflected upon accessing the checkout again. When the user clicks the truncated order number, they are redirected to the order confirmation page and are given an info message stating that this is a previous order.
+
+<p align="center">
+    <img src="documentation/features/profile-page.png"/>
+    <img src="documentation/features/past-order-message.png"/>
+</p>
