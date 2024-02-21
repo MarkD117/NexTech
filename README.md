@@ -69,3 +69,76 @@ This font was sourced from [Google Fonts](https://fonts.google.com/).
 - Bars icon used for mobile navigation dropdown.
 
 Icons sourced from [Font Awesome](https://fontawesome.com/).
+
+
+## Agile Development
+
+Launching this project alongside a GitHub Projects Page was a strategic decision aimed at effectively measuring and managing the anticipated workload. The primary objective was to outline the projected workload, identify key epics, and subsequently break them down into actionable user stories or bite-sized tasks. This approach allowed for a systematic approach to project management, ensuring clarity of goals and progress tracking throughout the development process.
+
+To see Kanban please click [here](https://github.com/users/MarkD117/projects/7).
+
+By utilizing GitHub Projects, I was able to organize tasks and assign priorities in the form of the GitHub labels to ensure timely completion of the site. At the initial planning stages, I meticulously designed each page, outlining the requirements and features I intended to incorporate. From these detailed page plans, I derived user stories that served as the backbone of the development process. 
+
+These user stories were strategically implemented to ensure seamless functionality across the site, with a particular focus on the customer journey—from product discovery to cart addition and ultimately, final purchase. By prioritizing core functionalities and user interactions, I aimed to create an intuitive and efficient browsing experience for our users.
+
+For each user story, acceptance criteria were established along with corresponding tasks. As tasks were completed, the respective box was checked off. Upon fulfillment of all components of the user story and meeting the acceptance criteria, the user story transitioned from the **'In Progress'** column to the **'Completed'** column.
+
+#### User stories
+
+####  Completed User Stories
+
+Click on a user story below to be directed to the Kanban project to examine any of the additional details of the user stories. If the specific story does not appear automatically, please click on it from the project page for more details.
+
+ 1. [USER STORY: Product List](https://github.com/MarkD117/nextech/issues/2)
+ 2. [USER STORY: View Products Without an Account](https://github.com/MarkD117/nextech/issues/4)
+ 3. [USER STORY: Product Details](https://github.com/MarkD117/nextech/issues/5)
+ 4. [USER STORY: Deals and Special Offers](https://github.com/MarkD117/nextech/issues/7)
+ 5. [USER STORY: Total Price](https://github.com/MarkD117/nextech/issues/8)
+ 6. [USER STORY: Create Account](https://github.com/MarkD117/nextech/issues/9)
+ 7. [USER STORY: Login/Logout](https://github.com/MarkD117/nextech/issues/11)
+ 8. [USER STORY: Password Reset](https://github.com/MarkD117/nextech/issues/12)
+ 9. [USER STORY: Confirmation Email](https://github.com/MarkD117/nextech/issues/13)
+ 10. [USER STORY: User Profile](https://github.com/MarkD117/nextech/issues/14)
+ 11. [USER STORY: Filters](https://github.com/MarkD117/nextech/issues/15)
+ 12. [USER STORY: Product Categories](https://github.com/MarkD117/nextech/issues/16)
+ 13. [USER STORY: Product Search](https://github.com/MarkD117/nextech/issues/17)
+ 14. [USER STORY: Numerous Category Search](https://github.com/MarkD117/nextech/issues/18)
+ 15. [USER STORY: Viewing Search and Filter Results](https://github.com/MarkD117/nextech/issues/19)
+ 16. [USER STORY: Add to Cart](https://github.com/MarkD117/nextech/issues/20)
+ 17. [USER STORY: Quantity Selection](https://github.com/MarkD117/nextech/issues/22)
+ 18. [USER STORY: Adjust Cart Quantity](https://github.com/MarkD117/nextech/issues/23)
+ 19. [USER STORY: Secure and Easy Payment System](https://github.com/MarkD117/nextech/issues/24)
+ 20. [USER STORY: Order Confirmation](https://github.com/MarkD117/nextech/issues/25)
+ 21. [USER STORY: Order Email Confirmation](https://github.com/MarkD117/nextech/issues/26)
+ 22. [USER STORY: Newsletter](https://github.com/MarkD117/nextech/issues/27)
+ 23. [USER STORY: Contact Form](https://github.com/MarkD117/nextech/issues/28)
+ 24. [USER STORY: Adding Products](https://github.com/MarkD117/nextech/issues/38)
+ 25. [USER STORY: Edit/Update Products](https://github.com/MarkD117/nextech/issues/39)
+ 26. [USER STORY: Delete Products](https://github.com/MarkD117/nextech/issues/40)
+ 27. [USER STORY: Wishlist](https://github.com/MarkD117/nextech/issues/45)
+ 
+
+####  Incompleted User Stories
+
+The following user stories have been marked as incomplete, as they were considered non-essential for the core functionality of the site at this stage. However, they represent potential [Future Features](#future-features) to be implemented in future iterations. While these issues were initially closed upon completing the project's code, they have since been reopened, as I am eager to revisit and incorporate them into a future patch of the site.
+
+The majority of the 18 out of 45 incomplete user stories pertain to a single app known as the forums app, along with the associated admin logic. While these features were deemed non-essential for the core functionality of the site during the initial development phase, they again represent potential additions for future updates.
+
+ 1. [USER STORY: Landing Page](https://github.com/MarkD117/nextech/issues/1)
+ 2. [USER STORY: Stock Availability](https://github.com/MarkD117/nextech/issues/3)
+ 3. [USER STORY: Multiple Product Images](https://github.com/MarkD117/nextech/issues/6)
+ 4. [USER STORY: Social Media Signup](https://github.com/MarkD117/nextech/issues/10)
+ 5. [USER STORY: Buy Now Button](https://github.com/MarkD117/nextech/issues/21)
+ 6. [USER STORY: Dedicated Forum](https://github.com/MarkD117/nextech/issues/29)
+ 7. [USER STORY: Create Forum Post](https://github.com/MarkD117/nextech/issues/30)
+ 8. [USER STORY: Edit/Update Posts](https://github.com/MarkD117/nextech/issues/31)
+ 9. [USER STORY: Delete Posts](https://github.com/MarkD117/nextech/issues/32)
+ 10. [USER STORY: Comment/Reply on Forum Posts](https://github.com/MarkD117/nextech/issues/33)
+ 11. [USER STORY: Post Detail View](https://github.com/MarkD117/nextech/issues/34)
+ 12. [USER STORY: Site Pagination](https://github.com/MarkD117/nextech/issues/35)
+ 13. [USER STORY: Forum Post Upvotes](https://github.com/MarkD117/nextech/issues/36)
+ 14. [USER STORY: Forum Search](https://github.com/MarkD117/nextech/issues/37)
+ 15. [USER STORY: Admin - Create Forum Post](https://github.com/MarkD117/nextech/issues/41)
+ 16. [USER STORY: Admin - Edit/Update Posts](https://github.com/MarkD117/nextech/issues/42)
+ 17. [USER STORY: Admin - Delete Forum Posts/Replies](https://github.com/MarkD117/nextech/issues/43)
+ 18. [USER STORY: View Contact Form Contents](https://github.com/MarkD117/nextech/issues/44)
