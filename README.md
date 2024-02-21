@@ -55,6 +55,6 @@ In terms of accent colors, Chrysler Blue takes center stage in the navigation me
 
 This font was sourced from [Google Fonts](https://fonts.google.com/).
 
-- <img src="documentation/other/icons/arrow-up-solid-svg" width="50" height="50"> icon used back to top button.
+- <img src="documentation/other/icons/arrow-up-solid.svg" width="50" height="50"> icon used back to top button.
 
 Icons sourced from [Font Awesome](https://fontawesome.com/).
