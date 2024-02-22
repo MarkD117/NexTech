@@ -29,7 +29,7 @@ The live project can be accessed [here](https://nextech-5db9177526a4.herokuapp.c
 ## UI/UX
 
 ### Design Overview
-The primary objective of the website is to offer users a curated selection of products tailored to the needs of computer enthusiasts. With an intuitive design at its core, our platform prioritizes simplicity and ease of navigation. Products are prominently displayed across various pages, encouraging users to explore further, while bold colors are strategically used to enhance visibility and attract attention. The commitment to seamless user experience is evident in every aspect of the site, with effortless accessibility and self-explanatory features. On-screen feedback messages are employed to guide users effectively, ensuring a smooth and enjoyable browsing experience.
+The primary objective of the website is to offer users a curated selection of products tailored to the needs of computer enthusiasts. With an intuitive design at its core, the site prioritizes simplicity and ease of navigation. Products are prominently displayed across various pages, encouraging users to explore further, while bold colors are strategically used to enhance visibility and attract attention. The commitment to seamless user experience is evident in every aspect of the site, with effortless accessibility and self-explanatory features. On-screen feedback messages are employed to guide users effectively, ensuring a smooth and enjoyable browsing experience.
 
 ### Colour Scheme
 
@@ -108,7 +108,7 @@ Nextech caters to a broad spectrum of tech-savvy individuals ranging from avid g
 
 ### Marketing Strategy
 
-- Social Media Promotion: Leverage Facebook business page for promotion and engage friends and family for wider reach.
+- Social Media Promotion: Avail of a Facebook business page for promotion and engage friends and family for wider reach.
 - Launch Sale: Initiate a soft online launch sale to drive early adoption and purchases.
 - Email Marketing: Utilize the in built newsletter sign up to build a subscriber base and send out offers and promotions.
 - Content Marketing: Create meaningful forum posts to boost SEO ranking and enhance visibility on search engines.
@@ -129,7 +129,7 @@ Long Tail - High-performance Gaming PC, High-end Gaming Desktop PCs, Budget Gami
 
 ### Sitemap.xml
 
-I generated a sitemap for the site using [XML-Sitemaps](https://www.xml-sitemaps.com/) to ensure effective indexing by search engines like Google once it's ready
+I generated a sitemap for the site using [XML-Sitemaps](https://www.xml-sitemaps.com/) to ensure effective indexing by search engines like Google.
 
 ### Robots.txt
 
@@ -151,9 +151,9 @@ To see Kanban please click [here](https://github.com/users/MarkD117/projects/7).
 
 By utilizing GitHub Projects, I was able to organize tasks and assign priorities in the form of the GitHub labels to ensure timely completion of the site. At the initial planning stages, I meticulously designed each page, outlining the requirements and features I intended to incorporate. From these detailed page plans, I derived user stories that served as the backbone of the development process. 
 
-These user stories were strategically implemented to ensure seamless functionality across the site, with a particular focus on the customer journey—from product discovery to cart addition and ultimately, final purchase. By prioritizing core functionalities and user interactions, I aimed to create an intuitive and efficient browsing experience for our users.
+These user stories were strategically implemented to ensure seamless functionality across the site, with a particular focus on the customer journey—from product discovery to cart addition and ultimately, final purchase. By prioritizing core functionalities and user interactions, I aimed to create an intuitive and efficient browsing experience for users.
 
-For each user story, acceptance criteria were established along with corresponding tasks. As tasks were completed, the respective box was checked off. Upon fulfillment of all components of the user story and meeting the acceptance criteria, the user story transitioned from the **'In Progress'** column to the **'Completed'** column.
+For each user story, acceptance criteria was established along with corresponding tasks. As tasks were completed, the respective box was checked off. Upon fulfillment of all components of the user story and meeting the acceptance criteria, the user story transitioned from the **'In Progress'** column to the **'Completed'** column.
 
 #### User stories
 
@@ -192,7 +192,7 @@ Click on a user story below to be directed to the Kanban project to examine any 
 
 ####  Incompleted User Stories
 
-The following user stories have been marked as incomplete, as they were considered non-essential for the core functionality of the site at this stage. However, they represent potential [Future Features](#future-features) to be implemented in future iterations. While these issues have been closed and moved to the Out of Scope column within the Kanban board.I am eager to revisit and incorporate them into a future patch of the site.
+The following user stories have been marked as incomplete, as they were considered non-essential for the core functionality of the site at this stage. However, they represent potential [Future Features](#future-features) to be implemented in future iterations. While these issues have been closed and moved to the Out of Scope column within the Kanban board, I am eager to revisit and incorporate them into a future patch of the site.
 
 The majority of the 18 out of 45 incomplete user stories pertain to a single app known as the forums app, along with the associated admin logic. While these features were deemed non-essential for the core functionality of the site during the initial development phase, they again represent potential additions for future updates.
 
@@ -348,7 +348,7 @@ During the planning stages, I  created wireframes for all pages of the site. [Ba
 
 The NexTech site boasts a multi-page layout accessible via a top-mounted navigation bar. Developed using Bootstrap, the navigation bar underwent customizations tailored to the site's unique requirements. Featuring a sleek and responsive design, the navigation menu seamlessly adapts to both mobile and desktop layouts, complemented by a stylized logo for enhanced branding.
 
-Notably, certain navigation options dynamically adjust based on user authentication status. For instance, visitors who aren't logged in will encounter prompts to register or log in. In contrast, authenticated users gain access to additional features such as the ability to log out, manage drafts, and add projects. Moreover, the 'Product Management' link remains exclusive to site administrators, ensuring restricted access solely for authorized personnel.
+Notably, certain navigation options dynamically adjust based on user authentication status. For instance, visitors who aren't logged in will encounter prompts to register or log in. In contrast, authenticated users gain access to additional features such as the ability to log out, view a wishlist and their personal profile. Moreover, the 'Product Management' link remains exclusive to site administrators, ensuring restricted access solely for authorized personnel.
 
 - Desktop
 
@@ -371,7 +371,7 @@ On the home page, the navigation menu adopts a stylish feature where its backgro
     <img src="documentation/features/transparent-nav.png"/>
 </p>
 
-When a user adds a product to their cart, the cart icon and total will update dynamically, showing the current total of the bag. The icon will also change to yellow which clearly identifies that the user has added an item to their shopping cart.
+When a user adds a product to their cart, the cart icon and total will update dynamically, showing the current total of the cart. The icon will also change to yellow which clearly identifies that the user has added an item to their shopping cart.
 
 <p align="center">
     <img src="documentation/features/default-cart.png"/>
@@ -380,7 +380,7 @@ When a user adds a product to their cart, the cart icon and total will update dy
 
 ### Site Footer
 
-TThe site footer was designed to serve dual purposes: offering users additional information and enhancing website functionality. It contains a brief description of the site, a convenient newsletter sign-up form, essential navigation links, contact details, and a direct link to the contact form. Designed with responsiveness in mind, the footer seamlessly adjusts to both mobile and desktop layouts, ensuring optimal accessibility across all devices.
+The site footer was designed to serve dual purposes: offering users additional information and enhancing website functionality. It contains a brief description of the site, a convenient newsletter sign-up form, essential navigation links, contact details, and a direct link to the contact form. Designed with responsiveness in mind, the footer seamlessly adjusts to both mobile and desktop layouts, ensuring optimal accessibility across all devices.
 
 - Desktop
 
@@ -408,10 +408,19 @@ The home page features a captivating background video showcasing computer games,
 
 ### Register Page
 
-If a new site user does not yet have an account, they can sign up using the register page. On this page they are prompted to enter a username, optional e-mail, and password. Once the information is correctly entered, the user can click the sign up button and they will be automatically logged into the site and redirected to the home page.
+If a new site user does not yet have an account, they can sign up using the register page. On this page they are prompted to enter a username, optional e-mail, and password. Once the information is correctly entered, the user can click the sign up button and they will be given a notification of an email confirmation which must be completed to access the site.
 
 <p align="center">
     <img src="documentation/features/register.png"/>
+</p>
+
+### Confirmation Email
+
+When first registering an account on the site, a registration email will be sent to the users email. The email contains a link that allows them to confirm their personal email address and access the site.
+
+<p align="center">
+    <img src="documentation/features/verify-email.png"/>
+    <img src="documentation/features/confirm-email.png"/>
 </p>
 
 ### Login Page
@@ -436,15 +445,6 @@ If a user has forgotten their passowrd, they can click a reset password link loc
 
 <p align="center">
     <img src="documentation/features/reset-password.png"/>
-</p>
-
-### Confirmation Email
-
-When first registering an account on the site, a registration email will be sent to the users email. The email contains a link that allows them to confirm their email and access the site.
-
-<p align="center">
-    <img src="documentation/features/verify-email.png"/>
-    <img src="documentation/features/confirm-email.png"/>
 </p>
 
 ### **Products Page**
@@ -477,7 +477,7 @@ Once a category has been selected, all products within the chosen category are d
 
 ### Product Search
 
-The search icon can be selected at any point whilst viewing the site. This will show a search bar prompting for input. Search querys entered to this search bar will return results based on matching results within the product names of descriptions.
+The search icon can be selected at any point whilst viewing the site. This will show a search bar prompting for input. Search querys entered to this search bar will return results based on matching querys within the product names or descriptions.
 
 - Desktop
 
@@ -497,7 +497,7 @@ The search icon can be selected at any point whilst viewing the site. This will 
 
 Upon clicking the product image, the user is redirected to the product detail page of that specific product. There is more information shown such as if the product is in stock, the option to add to a wishlist, product description and a quantity form.
 
-The quantity form allows users to add a defined quantity of the specific product to their cart. The plus and minus buttons may be used to increment the quantity. Below the product information are two buttons allowing users to add the product to their shopping cart or to return to the products page.
+The quantity form allows users to add a defined quantity of the specific product to their cart. The plus and minus buttons may be used to increment or decrement the quantity. Below the product information are two buttons allowing users to add the product to their shopping cart or to return to the products page.
 
 <p align="center">
     <img src="documentation/features/product-detail.png"/>
@@ -505,7 +505,7 @@ The quantity form allows users to add a defined quantity of the specific product
 
 ### Stock Tag
 
-The stock tag is currently only a cosmetic item that displays on all products. Future implementation of giving the stock tag a function could be added in the future. More mentioned in the [Future Features](#future-features).
+The stock tag is currently only a cosmetic item that displays on all products. Implementation of giving the stock tag a function could be added in the future. More mentioned in the [Future Features](#future-features).
 
 <p align="center">
     <img src="documentation/features/in-stock.png"/>
@@ -514,7 +514,7 @@ The stock tag is currently only a cosmetic item that displays on all products. F
 
 ### **The Cart**
 
-Users can add products to their cart from the products detail page. A message will show confirming the successful addition of a product to their cart. A summary of items within the cart will be shown in he message and the user can then click to view their cart. 
+Users can add products to their cart from the products detail page. A message will show confirming the successful addition of a product to their cart. A summary of items within the cart will be shown in the message and the user can then click to view their cart. 
 
 <p align="center">
     <img src="documentation/features/cart-success-message.png"/>
@@ -522,9 +522,9 @@ Users can add products to their cart from the products detail page. A message wi
 
 ### Shopping Cart Page
 
-In the cart page, the user can view a summary of the products they entered including information such as the name, sku, seleted quantity and price. Users may also opt to edit the quantity of items within the cart. This can be done by adjusting the quantity form and clicking the update button. Alternatively, users can remove items from their cart by clicking the remove button.
+In the cart page, the user can view a summary of the products they added, including information such as the name, sku, seleted quantity and price. Users may also opt to edit the quantity of items within the cart. This can be done by adjusting the quantity form and clicking the update button. Alternatively, users can remove items from their cart by clicking the remove button.
 
-below the product information is the billing information. If multiple products have been added, the total price of all products will be calculated and displayed here. Delivery on orders over $150 is free. This is denoted by messages and information on the cart page informing the users how much more they have to spend to get free delivery.
+below the product information is the billing information. If multiple products have been added, the total price of all products will be calculated and displayed here. Delivery on orders over $150 is free. This is denoted by messages and information on the cart page informing the users how much more they have to spend in order to get free delivery.
 
 Below the billing information are two buttons that allow the user to continue to the checkout page or to go back to the products page.
 
@@ -573,7 +573,7 @@ If a user has created an account, they can access the profile page in the accoun
 
 ### Wishlist Button
 
-If a user is logged in, an **Add to Wishlist** will appear on the procucts detail page. Upon clicking the button, the button will change to **Remove from Wishlist** and the product will be added to the wishlist along with a success message.
+If a user is logged in, an **Add to Wishlist** will appear on the procucts detail page. Upon clicking the button, it will change to **Remove from Wishlist** and the product will be added to the wishlist along with a success message.
 
 <p align="center">
     <img src="documentation/features/wishlist-add.png"/>
@@ -606,7 +606,7 @@ The contact form is a page that can be accessed through the site footer. Users c
 
 ### **Admin Features**
 
-Site admins have full access to all areas of the site. They also have full permission to add, edit, update and delete products on the site. This can be seen in the form of edit and delete buttons on each of the product cards and in each products detail page. The buttons will only be rendered in a user is an admin.
+Site admins have full access to all areas of the site. They also have full permission to add, edit, update and delete products on the site. This can be seen in the form of edit and delete buttons on each of the product cards and in each products detail page. The buttons will only be rendered if a user is an admin.
 
 - Product Card Buttons
 
@@ -630,7 +630,7 @@ The functionality for adding a product to the store can be accessed from clickin
 
 ### Edit Product
 
-To edit a product, site admins can click the aforementioned edit button and the product form will display prepopulated will the information pertaining to the specific product. An info message will appear informing the admin that they are editing a product. The admin can change any aspect of the products information and save the changes to the live site when finished.
+To edit a product, site admins can click the aforementioned edit button and the product form will display prepopulated with the information pertaining to the specific product. An info message will appear informing the admin that they are editing a product. The admin can change any aspect of the products information and save the changes to the live site when finished.
 
 <p align="center">
     <img src="documentation/features/edit-product.png"/>
@@ -638,7 +638,7 @@ To edit a product, site admins can click the aforementioned edit button and the 
 
 ### Deleting a Product
 
-If an admin wants to delete a product they can select the delete button on the product or product detail pages. When the delete button is clicked, a modal will appear asking for confirmation that the user does actually want to delete the product in question. This prevents the user from accidentally deleting an incorrect product.
+If an admin wants to delete a product they can select the delete button on the product or product detail pages. When the delete button is clicked, a modal will appear asking for confirmation that the user does actually want to delete the product in question. This prevents an admin from accidentally deleting an incorrect product.
 
 <p align="center">
     <img src="documentation/features/delete-modal.png"/>
@@ -695,7 +695,9 @@ This subtle yet intuitive feature was discussed in the section on [incomplete us
 
 [JSHint](https://jshint.com/) was used to validate the large javascript code. No errors were found.
 
-For all validation images please navigate to [this](https://github.com/MarkD117/NexTech/tree/main/documentation/validation) folder.
+[Stripe](https://stripe.com/ie) webhooks were tested through the stripe dashboard
+
+For all validation and testing images please navigate to [this](https://github.com/MarkD117/NexTech/tree/main/documentation/validation) folder.
 
 ### Browser Compatibility
 
@@ -739,7 +741,7 @@ Each user story was carefully tested to ensure that the implemented features fun
 | Numerous Category Search | Sort products into specific category and use sort select box to filter categorised list | Categorised products display in list format ordered by selected sorting criteria | pass
 | Product Search | Enter search query to search form inputs | Products are displayed in a list format whose name or description matches the submitted search query | pass
 | Viewing Search and Filter Results | Filter products and search for products | Products are filtered and ordered correctly, and relevant results are displayed to the user | pass
-| Wishlist | Add and remove producta to wishlist | When logged in, wishlist buttons appear, enabling users to add or remove products from their wishlist page. | pass
+| Wishlist | Add and remove products to wishlist | When logged in, wishlist buttons appear, enabling users to add or remove products from their wishlist page. | pass
 
 #### **Contact & Communication**
 
@@ -766,16 +768,16 @@ Each user story was carefully tested to ensure that the implemented features fun
 
 | Story | Test | Expected Outcome | Result | 
 |--|--|--|--|
-| Adding Products | As an admin, navigate to product management in the account menu dropdown and enter form information | Admin users can access the add product form and successfully add a product to the store will all the relevant input vaidation present  | pass
+| Adding Products | As an admin, navigate to product management in the account menu dropdown and enter form information | Admin users can access the add product form and successfully add a product to the store with all the relevant input vaidation present  | pass
 | Edit/Update Products | As an admin, click the edit button on a product whilst on the products or product detail pages, change form information | Admin users can view and access the edit buttons and forms on the site. The forms populate with the relevant product information and all changes saved are refleted on the site | pass
-| Deleting Products | As an admin, click the edit button on a product whilst on the products or product detail pages and click confirm delete on the modal | Admin users can view and access the delete buttons on the on the site. Clicking the delete button will display a modal asking for confirmation, clicking confirm delete will delete the specific product from the site | pass
+| Deleting Products | As an admin, click the delete button on a product whilst on the products or product detail pages and click confirm delete on the modal | Admin users can view and access the delete buttons on the on the site. Clicking the delete button will display a modal asking for confirmation, clicking confirm delete will delete the specific product from the site | pass
 
 
 ## Bug Fixes
 
 ### Loading Spinner
 
-The font awesome `fa-spin` class was not functioning correctly and the icon was not spinning when shown to the user with the loading overlay. Through testing and research, I found that the issue was to do with my personal font awesome kit. Using the kit that was specified in the walkthrough fixed this issue; however, when replacing my own kit, some of the site icons disappeared. Using both kits simultaneously fixed the missing icons and allowed the spinner spin correctly.
+The font awesome `fa-spin` class was not functioning correctly and the icon was not spinning when shown to the user with the loading overlay. Through testing and research, I found that the issue was to do with my personal font awesome kit. Using the kit that was specified in the walkthrough fixed this issue; however, when replacing my own kit, some of the site icons disappeared. Using both kits simultaneously fixed the missing icons and allowed the spinner spin to correctly.
 
 ### Email Backends Server Error
 
