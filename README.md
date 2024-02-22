@@ -636,7 +636,7 @@ The site has been tested on the following browsers:
 
 ### Testing and Results
 
-Each user story was carefully tested to ensure that the implemented features functioned as expected. Because this project was driven by my own User Stories, I felt that manual testing should be performed on all logic code.
+Each user story was carefully tested to ensure that the implemented features functioned as expected. Due to the fact that this project was driven by my own User Stories, I felt that manual testing should be performed on all logic code.
 
 #### **Registration & User Accounts**
 
@@ -697,3 +697,86 @@ Each user story was carefully tested to ensure that the implemented features fun
 | Adding Products | As an admin, navigate to product management in the account menu dropdown and enter form information | Admin users can access the add product form and successfully add a product to the store will all the relevant input vaidation present  | pass
 | Edit/Update Products | As an admin, click the edit button on a product whilst on the products or product detail pages, change form information | Admin users can view and access the edit buttons and forms on the site. The forms populate with the relevant product information and all changes saved are refleted on the site | pass
 | Deleting Products | As an admin, click the edit button on a product whilst on the products or product detail pages and click confirm delete on the modal | Admin users can view and access the delete buttons on the on the site. Clicking the delete button will display a modal asking for confirmation, clicking confirm delete will delete the specific product from the site | pass
+
+
+## Bug Fixes
+
+### Loading Spinner
+
+The font awesome `fa-spin` class was not functioning correctly and the icon was not spinning when shown to the user with the loading overlay. Through testing and research, I found that the issue was to do with my personal font awesome kit. Using the kit that was specified in the walkthrough fixed this issue; however, when replacing my own kit, some of the site icons disappeared. Using both kits simultaneously fixed the missing icons and allowed the spinner spin correctly.
+
+### Email Backends Server Error
+
+When integrating a working email system to the site using Gmail I ran into a 500 server error when registering a new user to test the emails. The error pointed towards an issue with the email backends. Through research into the slack channels, I found a few users with the same issue. The error was solved by running the command `touch runtime.txt && echo "python-3.9.16" > runtime.txt` to create a runtime.txt file. After implementing this fix, the emails functioned correctly.
+
+### Accessing Wishlist as New User
+
+When developing and testing the Wishlist feature I noticed that when a new user was created, and they try to access the Wishlist page, an error appears saying that the a matching Wishlist query does not exist. The Wishlist page seemed to only appear successfully after a user has added at least one product to the Wishlist. Through my research into the issue, I found that the error was caused because the site is trying to retrieve a Wishlist object for the current user, but it doesn't exist if the user hasn't added anything to their Wishlist yet.
+
+I found some [stackoverflow](https://stackoverflow.com/questions/17813919/django-error-matching-query-does-not-exist) questions addressing the error which noted to using `get_object_or_404` with a try-except block to handle the non-existent object. This wouldn’t work in this case as the Wishlist page must be accessible to logged in users at all times. I eventually found that I could use [`objects.create`](https://stackoverflow.com/questions/26672077/django-model-vs-model-objects-create) along with the try-except block to catch the `DoesNotExist` exception and provide a default response, which will create a new empty wishlist for the user and allow them to access the wishlist page.
+
+**Bugged Code**
+```python
+@login_required
+def view_wishlist(request):
+    # Retrieve the wishlist of the current user
+    wishlist = WishList.objects.get(user=request.user)
+
+    context = {
+        'wishlist': wishlist
+    }
+
+    return render(request, 'wishlist/wishlist.html', context)
+```
+
+**Fixed Code**
+```python
+@login_required
+def view_wishlist(request):
+    try:
+        # Try to retrieve the wishlist of the current user
+        wishlist = WishList.objects.get(user=request.user)
+    except WishList.DoesNotExist:
+        # If wishlist doesn't exist for the user, create a new one
+        wishlist = WishList.objects.create(user=request.user)
+    
+    context = {
+        'wishlist': wishlist
+    }
+
+    return render(request, 'wishlist/wishlist.html', context)
+```
+
+### Newsletter Form Display Issue
+
+When implementing the newsletter form. The form was rendered in the footer of the root `base.html` file with crispy forms. When inspecting the code in the browser, the form input had an automatic type="hidden" on all other URLs on the site apart from the '/contact/subscribe' URL. This meant that the form only displayed on that specific URL. The original intended purpose for the newsletter was to be displayed on all pages in the footer.
+
+The solution for the form to be displayed on all pages was to actually manually code in the form, due to needing a route to render a crispy form. This is global so I needed to do without crispy forms and manually add it.
+
+**Bugged Code**
+```html
+<form method="post" action="{% url 'subscribe' %}">
+    {% csrf_token %}
+    {{ NewsletterForm|crispy }}
+    <button type="submit" class="btn btn-primary">Subscribe</button>
+</form>
+```
+**Fixed Code**
+```html
+<form method="post" action="/contact/subscribe/" class="row" id="newsletter-form">
+    {% csrf_token %}
+    <div id="div_id_newsletter_email" class="form-group col-md-8 col-sm-9 p-0">
+    <div>
+        <input type="email" name="email" maxlength="100" class="form-control emailinput"
+        placeholder="Your email" required id="id_newsletter_email">
+    </div>
+    </div>
+    <div class="col-md-4 col-sm-3" id="subscribe-btn">
+    <button type="submit" aria-label="newsletter subscribe button" class="btn btn-blue w-100">
+        <span class="icon">
+        <i class="fas fa-chevron-right"></i>
+        </span>
+    </button>
+    </div>
+</form>
+```
