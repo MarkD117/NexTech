@@ -610,6 +610,7 @@ This subtle yet intuitive feature was discussed in the section on [incomplete us
 - [Stripe](https://stripe.com/) used for processing payment and webhooks.
 - [XML-Sitemaps](https://www.xml-sitemaps.com/) used for generating sitemap.
 
+
 ## Testing
 
 ### Code Validation
@@ -632,3 +633,67 @@ The site has been tested on the following browsers:
 - Microsoft Edge - ✔️
 - iOS (Mobile) - ✔️
 - Android - ✔️
+
+### Testing and Results
+
+Each user story was carefully tested to ensure that the implemented features functioned as expected. Because this project was driven by my own User Stories, I felt that manual testing should be performed on all logic code.
+
+#### **Registration & User Accounts**
+
+| Story | Test | Expected Outcome | Result | 
+|--|--|--|--|
+| Create Account | Register account in account menu | User can enter information to registration form providing adequate validation | pass
+| Confirmation Email | Register account in account menu | User recieves a confirmation email allowing them to confirm their email and successfully register to the site | pass
+| Login/Logout | Log into & out of account | Account login and logout process completes successfully | pass
+| Password Reset | Click reset password link on login page | User recieves email allowing them to reset their password | pass
+| User Profile | Log into site and access user profile page through account dropdown | User can view their personal profile, order history and save/update delivery information | pass
+
+#### **Viewing & Navigation**
+
+| Story | Test | Expected Outcome | Result | 
+|--|--|--|--|
+| Product List | Navigate to products page | All products and product information appear in a list in the form of cards | pass
+| View Products Without an Account | Navigate to product page as a non logged in user | All products and product information appear in a list in the form of cards | pass
+| Deals and Special Offers | Enter offers dropdown menu | List of products within the New Arrivals, Deals and Clearance Categories appear in a list | pass
+| Total Price | Add products to the cart | Users total order cost updates dynamically on all pages of the site | pass
+| Product Details | Click product image on products page | Redirected to new product detail page displaying product image, name, price, category, rating, stock status, description and quantity | pass
+
+#### **Sorting & Searching**
+
+| Story | Test | Expected Outcome | Result | 
+|--|--|--|--|
+| Filters | Select options in products sort select box | Products matching selected sorting criteria display in list format | pass
+| Product Categories | Select specific categories from nav menu dropdowns | Products matching selected categories display in list format | pass
+| Numerous Category Search | Sort products into specific category and use sort select box to filter categorised list | Categorised products display in list format ordered by selected sorting criteria | pass
+| Product Search | Enter search query to search form inputs | Products are displayed in a list format whose name or description matches the submitted search query | pass
+| Viewing Search and Filter Results | Filter products and search for products | Products are filtered and ordered correctly, and relevant results are displayed to the user | pass
+| Wishlist | Add and remove producta to wishlist | When logged in, wishlist buttons appear, enabling users to add or remove products from their wishlist page. | pass
+
+#### **Contact & Communication**
+
+| Story | Test | Expected Outcome | Result | 
+|--|--|--|--|
+| Contact Form | Access contact form and submit data to form | Contact form loads correctly, and allows users to submit information with adequate validation | pass
+| Newsletter | Add email to newsletter | Users can add their email to the newsletter form and submit correctly with validation and feedback messages | pass
+
+
+
+#### **Purchasing & Checkout**
+
+| Story | Test | Expected Outcome | Result | 
+|--|--|--|--|
+| Quantity Selection | Interact with quantity selector on product detail page | Form buttons update quantity and quantity changes are reflected in the shopping cart and order total calculations. Input validation is also present | pass
+| Add to Cart | Add an item to the shopping cart using the buttons on the product detail page | Product gets successfully added to the cart, message shows success and order summary, cart order total updates correctly | pass
+| Adjust Cart Quantity | Interact with quantity selector on shopping cart page | Form buttons update quantity and quantity changes are reflected in the shopping cart and order total calculations. Input validation is also present | pass
+| Secure and Easy Payment System | Follow checkout process inputting form data and stripe test card info | Checkout process completes successfully redirecting the user to the order confirmation page with a success message | pass
+| Order Confirmation | Complete checkout process | User is presented with a detailed break down of their order information, products they have ordered, delivery information and billing information | pass
+| Order Email Confirmation | Complete checkout process | User gets sent a confirmation email from the site detailing their order, delivery and billing information | pass 
+
+
+#### **Admin & Store Management**
+
+| Story | Test | Expected Outcome | Result | 
+|--|--|--|--|
+| Adding Products | As an admin, navigate to product management in the account menu dropdown and enter form information | Admin users can access the add product form and successfully add a product to the store will all the relevant input vaidation present  | pass
+| Edit/Update Products | As an admin, click the edit button on a product whilst on the products or product detail pages, change form information | Admin users can view and access the edit buttons and forms on the site. The forms populate with the relevant product information and all changes saved are refleted on the site | pass
+| Deleting Products | As an admin, click the edit button on a product whilst on the products or product detail pages and click confirm delete on the modal | Admin users can view and access the delete buttons on the on the site. Clicking the delete button will display a modal asking for confirmation, clicking confirm delete will delete the specific product from the site | pass
