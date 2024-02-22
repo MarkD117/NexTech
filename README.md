@@ -784,3 +784,345 @@ The solution for the form to be displayed on all pages was to actually manually 
 ## Known Bugs
 
 There are currently no known bugs with the site.
+
+## Deployment
+
+The program was deployed using [Heroku](https://id.heroku.com/). The following steps have been broken into sections to make them easier to follow.
+
+### Create Database
+
+1.	Create an account or log in to [ElephantSql](https://www.elephantsql.com/) to access your dashboard.
+2.	Click **Create New Instance**.
+3.	Set up your plan by giving it a **Name** (this is commonly the name of the project).
+4.	Select the **Tiny Turtle (Free)** plan.
+5.	Leave the Tags field blank.
+6.	Select **Select Region**.
+7.	Select a data center near you.
+8.	Then click the green **Review** button.
+9.	Check your details are correct and then click **Create instance**.
+10.	Return to the **ElephantSQL Dashboard** and click on the database instance name for this project.
+11.	In the **URL** section, clicking the copy icon will copy the database URL to your clipboard.
+
+### Create Heroku App
+
+1.	Create an account or log in to [Heroku](https://id.heroku.com/).
+2.	Click **New** to create a new app.
+3.	Give your app a **name**.
+4.	select the **region** closest to you.
+5.	Click **Create app** to confirm.
+6.	Open the **Settings** tab.
+7.	Scroll down to the **Config Var** row and click **Reveal Config Vars**.
+8.	Add the config var `DATABASE_URL`, and for the value, copy in your database URL from ElephantSQL.
+9.	Add `PORT: 8000` and the Django `SECRET_KEY` value to the Config Vars.
+
+### Prepare IDE
+
+1.	In the **terminal**, install **dj database url** and **psycopg2** using the command `pip3 install dj_database_url==0.5.0 psycopg2`.
+2.	Update the **requirements.txt** file by using the command ` pip freeze > requirements.txt`.
+3.	In **settings.py**, `import dj_database_url` **underneath the import for os**. The top of your settings.py code should look something like this;
+```python
+from pathlib import Path
+import os
+import dj_database_url
+if os.path.isfile('env.py'):
+    import env
+```
+4.	Scroll to the **DATABASES** section and update it to the following code, so that the original connection to sqlite3 is commented out and the connection is set to the new ElephantSQL database instead. Paste in your ElephantSQL database URL in the position indicate
+```python
+DATABASES = {
+     'default': dj_database_url.parse('your-database-url-here')
+ }
+ ```
+5.	In the terminal, run the **showmigrations** command to confirm you are connected to the external database `python3 manage.py showmigrations`.
+6.	If you are, you should see a list of all migrations, but none of them are checked off.
+7.	Migrate your database models to your new database using `python3 manage.py migrate`.
+8.	In my case, I had already manually created categories and added products to the test database as I initially did not have a fixtures folder. To prevent having to manually enter the products and categories again. I used the `dumpdata` command to extract the products app model data to a .json object. The process was done through the [Django dumpdata documentation](https://docs.djangoproject.com/en/5.0/ref/django-admin/#dumpdata)
+The following commands were used;
+`python3 manage.py dumpdata products.ProductCategory  > products/fixtures/product_categories.json`
+`python3 manage.py dumpdata products.Product  > products/fixtures/products.json`
+9.	Load in the created fixtures. The order is very important. **Categories MUST be loaded first** with `python3 manage.py loaddata product_categories`
+10.	Load the products with `python3 manage.py loaddata products`
+11.	Create a superuser for the new database using `python3 manage.py createsuperuser`
+12.	To prevent exposing the database when pushing to GitHub, remove the custom database from the databases section of settings.py and replace it with the original sqlite3 database configuration.
+
+### Confirming Database
+
+1.	On the ElephantSQL page for your database, in the left side navigation, select **BROWSER**.
+2.	Click the **Table queries** button, select `auth_user`.
+3.	When you click **Execute**, you should see the newly created superuser details displayed. This confirms the tables have been created and that data can be added to the database.
+
+### Deploying to Heroku
+
+1.	Add an if statement to the database in settings.py that only connects to postgres if the DATABASE_URL environment is present. This keeps the database URL out of version control.
+```python 
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+```
+2.	Install **Guinicorn** with `pip3 install gunicorn`
+3.	**Freeze** gunicorn into requirements with `pip3 freeze > requirements.txt`
+4.	Create the `Procfile` in the root directory
+5.	Add the following code to the file to tell Heroku to create a **web dyno** which will run gunicorn and serve the Django app `web: gunicorn your_app_name.wsgi:application`.
+6.	Type `Heroku login` into the terminal of your editor and follow the steps to log in to Heroku.
+7.	Temporarily **disable collectstatic** by using `heroku config:set DISABLE_COLLECTSTATIC=1 –app your-heroku-app-hostname` So that Heroku won't try to collect staticfiles upon deployment.
+8.	Add **hostname** of the Heroku app to `ALLOWED_HOSTS`  in settings.py. The format should be the Heroku app name followed by .herokuapp.com.
+9.	**Commit** all changes and push to **GitHub**.
+10.	**Initialise the Heroku git remote** if the app was created through the Heroku dashboard. This can be done by typing: `heroku git:remote -a your-heroku-app-hostname`
+11.	Deploy to Heroku using `git push heroku main`.
+
+### Automtic Deployements
+
+1.	Go to the **Heroku dashboard**.
+2.	Click the specified app.
+3.	Navigate to the **Deploy** tab.
+4.	Click the **Connect to GitHub** button.
+5.	Search for the repository name.
+6.	Click **Connect**.
+7.	Scroll down to Automatic Deploys and click **Enable Automatic Deploys**.
+
+### AWS Configuration
+
+#### Create a Bucket
+
+1.	Navigate to [AWS](https://aws.amazon.com) and log in or create an AWS account.
+2.	Search for the **S3** service or find it through the **services menu**.
+3.	Open S3 and click **Create bucket**.
+4.	Give the bucket a name (recommended using the app name).
+5.	Select the **region closest** to you.
+6.	In the Object Ownership Section select **ACLs enabled**.
+7.	Set the Object Ownership to **Bucket owner preferred**.
+8.	Untick **Block all public** access and select the **acknowledge that the bucket will be public** checkbox in order to allow public access to the static files.
+9.	Once settings have been configured, click **Create bucket**.
+
+#### Bucket Settings
+
+##### **Static Website Hosting**
+
+1.	Click the newly created bucket
+2.	Navigate to the **Properties** tab and scroll down to the bottom to the **Static website hosting** section and click **Edit**.
+3.	Click to **Enable** static website hosting.
+4.	Set the default values of the index and error documents to `index.html` and `error.html`
+5.	Click **Save changes**.
+
+##### **CORS Configuration**
+
+6.	Navigate to the **Permissions** tab
+7.	Scroll down to the **Cross-origin resource sharing (CORS)** section and click **Edit**.
+8.	Paste the following code into the **CORS** configuration;
+```json
+[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+```
+9.	Scroll to the **Bucket policy** section and click **Edit**.
+
+##### **Security Policy**
+
+10.	Click **Policy Generator** to create a security policy for the bucket.
+11.	Set the policy type to **S3 Bucket Policy**.
+12.	Allow all **Principals** by using a `*` in the principal field.
+13.	Select the **Get Object** action.
+14.	Get the **ARN** (Amazon Resource Name) from the **Edit bucket policy** page. This is generally in the format of `arn:aws:s3::::your_bucket_name `.
+15.	Click **Add Statement**.
+16.	Click **Generate Policy**.
+17.	Copy the generated policy into the **Bucket policy editor**.
+18.	Before clicking save changes, add a `/*` onto the end of the **resource key** to allow access to all resources in the bucket.
+19.	Now click **Save changes**.
+
+##### **Access Control List**
+
+20.	Navigate to the **Access control list (ACL)** section and click **Edit**.
+21.	Set the **list objects** permission for **everyone** on the **public access** section.
+22.	Accept the **warning message** below.
+23.	Click **Save changes**.
+
+### Creating AWS Groups, Policies and Users
+
+#### Create A Group
+
+1.	Search for the **IAM** (Identity and Access Management) service or find it through the **services menu**.
+2.	Open the **IAM Dashboard**.
+3.	Dropdown the **Access management** menu from the sidebar and select **User groups**.
+4.	Click **Create group**.
+5.	Give the group a name. The name for this group is `manage-nextech`.
+6.	Click **Create group**.
+
+#### Create A Policy
+
+7.	Select **Policies** from the sidebar.
+8.	Click **Create Policy**.
+9.	Go to the **JSON** tab.
+10.	Click the actions dropdown and select **import policy**.
+11.	Search for the **S3 full access policy**.
+12.	Select the `AmazonS3FullAccess` policy and click **Import Policy**.
+13.	To prevent allowing full access to everything, replace the resource value with the bucket **ARN**. This will allow full access to the bucket and everything within it. The resource value should look like this;
+```json
+"Resource": [
+"arn:aws:s3:::your_bucket_name",
+	"arn:aws:s3::: your_bucket_name /*"
+]
+```
+14.	Once the policy is configured, click **Next**.
+15.	Give the policy a **Name** and a **Description**.
+16.	Click **Create policy**.
+
+#### Add policy to group
+
+17.	Navigate to User **Groups**.
+18.	Select the group that has just been created.
+19.	Go to the **Permissions** tab and open the **Add permissions** dropdown.
+20.	Click **Attach policies**.
+21.	**Search** for and then **select** the newly created policy.
+22.	Click **Attach policy** to add it to the group.
+
+#### Create a User
+
+23.	Select **User**s from the sidebar.
+24.	Click **Create user**.
+25.	Giver the user a **name**. The user name used for this project is `nextech-static-files-user`.
+26.	Click **Next**.
+27.	Select the previously created group with the policy attached and click Next.
+28.	Click into the user that has just been created.
+29.	Scroll down to the **Access keys** section.
+30.	Click **Create Access Key**.
+31.	Select the **Other** use case option and click **Next**.
+32.	Optionally give the key a **description** and click **Next**.
+33.	Download the `.csv` file and click **Done**.
+
+### Connect Django to S3
+
+1.	Install the Django packages `boto3` and `Django Storages` using the commands;
+`pip3 install boto3`
+`pip3 install django-storages`
+2.	Freeze the new packages into the requirements.txt file with `pip3 freeze > requirements.txt`
+3.	Add `storages` to Installed apps within the settings.py file.
+4.	To connect Django to S3 some settings need to be added to specify what bucket it will be communicating with. This will only need to apply on Heroku so an if statement is used to check if a `USE_AWS` variable is present in the environment.
+
+The Bucket Configuration settings should look like the code snippet below;
+```python
+if 'USE_AWS' in os.environ:
+    # Bucket Config
+    AWS_STORAGE_BUCKET_NAME = 'your-bucket-name'
+    AWS_S3_REGION_NAME = 'your-chosen-region'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+```
+5.	Go to the Heroku dashboard and add the AWS keys from the downloaded .csv file to the project Config Vars with the key names from the above snippet.
+6.	Add the `USE_AWS` key with its value set to `TRUE` to use the AWS keys when deployed through Heroku.
+7.	Remove the `DISABLE_COLLECTSTATIC` config var so Django will collect static files automatically and upload them to S3.
+8.	Create a new file called `custom_storages.py` in the root directory.
+9.	Import the `settings` and the `S3Boto3Storage` class from Django storages. 
+10.	Create two custom classes to specify the storage location of the static files and media files. The custom storages file should look like this;
+```python
+from django.conf import settings
+from storages.backends.s3boto3 import S3Boto3Storage
+
+class StaticStorage(S3Boto3Storage):
+    location = settings.STATICFILES_LOCATION
+
+class MediaStorage(S3Boto3Storage):
+    location = settings.MEDIAFILES_LOCATION
+
+```
+11.	In AWS if statement in the settings.py file, specify the location of static and media files, and, override the URLs in production. Add the below code to the if statement;
+```python
+# Static and media files
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+STATICFILES_LOCATION = 'static'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+MEDIAFILES_LOCATION = 'media'
+
+# Override static and media URLs in production
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+````
+12.	**Add/commit** the above changes and push to **GitHub**.
+
+### Caching, Media Files & Stripe
+
+#### Media Files
+
+1.	Add a the below setting to the **settings AWS if statement** to tell the browser that it is okay to cache static files for a long time as they don’t change that often. This will improve performance site users.
+```python
+# Cache control
+AWS_S3_OBJECT_PARAMETERS = {
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    'CacheControl': 'max-age=94608000',
+}
+```
+2.	Add, commit and push to GitHub.
+3.	Navigate to **S3** and select the **project bucket**.
+4.	In the **Object tab**, select **Create folder**.
+5.	Name the folder **media** and click **Create folder**.
+6.	Click the created folder and select **Upload**.
+7.	Click **Add files** and add all **media files** to the folder.
+8.	Scroll down and open the **Permissions dropdown**.
+9.	Enable **Grant public-read access** and accept the warning.
+10.	Click **Upload** and the static files will start to upload to AWS.
+
+#### Confirm Superuser Email on Postgres Database
+
+11.	Open the **deployed Heroku** site and log in to the **Django admin panel**.
+12.	Navigate to the **Email addresses tab** (**Note:** if you don’t see your email address, you may need to attempt to log in first to force Allauth to create it.)
+13.	Select the **superuser email** and mark it as **Verified** and **Primary**.
+14.	Click **Save** to save your changes.
+
+#### Configuring Stripe
+
+15.	Log into [Stripe](https://stripe.com/).
+16.	Click **Developers**.
+17.	Navigate to the **API Keys Tab** and get the **public** and **secret** API keys.
+18.	Add the `STRIPE_PUBLIC_KEY` and `STRIPE_SECRET_KEY` values to the Heroku config vars.
+19.	Configure a new **Stripe Webhook Endpoint** by navigating the Webhooks tab In the Stripe developer dashboard.
+20.	Click **Add endpoint**.
+21.	Add the URL for the deployed Heroku app followed by `/checkout/wh/`.
+22.	Click Select **events** and check the Select all events option.
+23.	Click **Add events**.
+24.	Scroll down to the bottom of the page and select **Add endpoint**.
+25.	Reveal the** Webhook Signing Secret** and add it to the Heroku config vars using the key name `STRIPE_WH_SECRET`.
+
+The site is now fully deployed and configured with AWS and Stripe.
+
+### Forking The Repository
+
+By forking the GitHub Repository, you can create a copy of the original repository to view or modify without impacting the original.
+
+The steps to do this are as follows: 
+
+1.  Sign up or Login to [GitHub](https://github.com/)
+2. Go to the repository which can be accessed [here](https://github.com/MarkD117/NexTech). 
+3.  At the top of the repository, on the right side of the page, select **Fork**.
+4.  A copy of the project repository should now be created as your own repository.
+
+### Create Repository Clone
+
+Making a clone allows you to make a duplicate of the repository at that moment in time, allowing you to execute a local copy of the project: 
+
+This can be accomplished by the following steps:
+
+1.   Navigate to the project [repository](https://github.com/MarkD117/NexTech)
+2.   Click the dropdown arrow on the green code button at the top of code files.
+3.   **Copy the URL** provided by the clone by https option to the clipboard.
+4.   Navigate to your preferred code editor and change the directory within the terminal to the location where you wish to clone the repository.
+5.   Type ```git clone``` and paste the https link you copied from github.
+6.   Press **Enter** and git will clone the repository to your local machine.
