@@ -609,3 +609,26 @@ This subtle yet intuitive feature was discussed in the section on [incomplete us
 - [AWS IAM](https://aws.amazon.com/) used for permissions based roles for accessing the S3 buckets.
 - [Stripe](https://stripe.com/) used for processing payment and webhooks.
 - [XML-Sitemaps](https://www.xml-sitemaps.com/) used for generating sitemap.
+
+## Testing
+
+### Code Validation
+
+[HTML W3C Validator](https://validator.w3.org) was used to validate the html code. No errors were found.
+
+[CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files. No errors were found.
+
+[CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the python code. Again, no errors were found.
+
+[JSHint](https://jshint.com/) was used to validate the large javascript code. No errors were found.
+
+For all validation images please navigate to [this](https://github.com/MarkD117/NexTech/tree/main/documentation/validation) folder.
+
+### Browser Compatibility
+
+The site has been tested on the following browsers:
+- Google Chrome - ✔️
+- Mozilla FireFox - ✔️
+- Microsoft Edge - ✔️
+- iOS (Mobile) - ✔️
+- Android - ✔️
