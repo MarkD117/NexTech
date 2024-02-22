@@ -777,7 +777,7 @@ Each user story was carefully tested to ensure that the implemented features fun
 
 ### Loading Spinner
 
-The font awesome `fa-spin` class was not functioning correctly and the icon was not spinning when shown to the user with the loading overlay. Through testing and research, I found that the issue was to do with my personal font awesome kit. Using the kit that was specified in the walkthrough fixed this issue; however, when replacing my own kit, some of the site icons disappeared. Using both kits simultaneously fixed the missing icons and allowed the spinner spin to correctly.
+The font awesome `fa-spin` class was not functioning correctly and the icon was not spinning when shown to the user with the loading overlay. Through testing and research, I found that the issue was to do with my personal font awesome kit. Using the kit that was specified in the walkthrough fixed this issue; however, when replacing my own kit, some of the site icons disappeared. Using both kits simultaneously fixed the missing icons and allowed the spinner to spin correctly.
 
 ### Email Backends Server Error
 
