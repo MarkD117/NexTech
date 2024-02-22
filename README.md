@@ -1198,3 +1198,30 @@ This can be accomplished by the following steps:
 4.   Navigate to your preferred code editor and change the directory within the terminal to the location where you wish to clone the repository.
 5.   Type ```git clone``` and paste the https link you copied from github.
 6.   Press **Enter** and git will clone the repository to your local machine.
+
+## Credits
+
+| Source | Item |
+| --- | --- |
+| [Creative Fabrica](https://www.creativefabrica.com/nl/product/letter-nt-logo-design-vector-template-6/) | NexTech Logo |
+| [Mozilla](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events) | Intro to Event Listeners  |
+| [Mozilla](https://developer.mozilla.org/en-US/docs/Web/API/Document/scroll_event) | Intro to scroll events |
+| [Mozilla](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList) | Toggling classes with JavaScript |
+| [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) | Transition Property in CSS |
+| [StackOverflow](https://stackoverflow.com/questions/46503011/how-to-make-navbar-background-appear-when-scrolling-down-but-disappear-when-scr) | nav background appear on scroll |
+| [StackOverflow](https://stackoverflow.com/questions/11434735/change-element-style-on-page-scroll) | change element style on page scroll |
+| [CarpoolVenom](https://www.youtube.com/watch?v=oP9HBE-4Wxw&t) | Search bar appear on click  |
+| [StackOverflow](https://stackoverflow.com/questions/54458516/how-to-disable-picture-in-picture-mode-on-html5-video) | disable picture in picture mode |
+| [GreatStack](https://www.youtube.com/watch?v=znqUwx0b0HI) | Add a video background  |
+| [PCSpecialist](https://www.youtube.com/watch?v=7mtCVwW0NUk) | Hero background video  |
+| [Vecteezy](https://www.vecteezy.com/vector-art/5337799-icon-image-not-found-vector) | No image - image |
+| [Django Docs](https://docs.djangoproject.com/en/stable/topics/http/views/) | Setting background change on home template only |
+| [Django Docs](https://docs.djangoproject.com/en/stable/topics/class-based-views/generic-display/#adding-extra-context) | Django Context Data – setting is home variable |
+| [Laptops Direct](https://www.laptopsdirect.ie/awd-it-msi-m100r-amd-ryzen-5-5500-rtx-3060-16gb-ram-1tb-ssd-windows-11-gami-m1r-55361216g1-w6w/version.asp) | Custom PC |
+| [Laptops Direct](https://www.laptopsdirect.ie/) | Source For Computers |
+| [Amazon](https://www.amazon.co.uk/) | Source for computer parts |
+| [StackOverflow](https://stackoverflow.com/questions/56580696/how-to-implement-add-to-wishlist-for-a-product-in-django) | Wishlist Research |
+| [Desphixs](https://www.youtube.com/watch?v=pdttUeJi7j8) | wishlist inspiration |
+| [Very Academy](https://www.youtube.com/watch?v=OgA0TTKAtqQ&t) | wishlist inspiration |
+| [StackOverflow](https://stackoverflow.com/questions/59341177/can-i-use-javascript-to-add-or-remove-attributes-from-a-video-tag) | Video attribute validation fix |
+| [Code Institute](https://codeinstitute.net/ie/) | Portfolio Project 5 Course Content |
