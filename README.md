@@ -531,3 +531,43 @@ The contact form is a page that can be accessed through the site footer. Users c
 <p align="center">
     <img src="documentation/features/contact-form.png"/>
 </p>
+
+### **Admin Features**
+
+Site admins have full access to all areas of the site. They also have full permission to add, edit, update and delete products on the site. This can be seen in the form of edit and delete buttons on each of the product cards and in each products detail page. The buttons will only be rendered in a user is an admin.
+
+- Product Card Buttons
+
+<p align="center">
+    <img src="documentation/features/admin-product-cards.png"/>
+</p>
+
+- Product Detail Buttons
+
+<p align="center">
+    <img src="documentation/features/admin-product-detail.png"/>
+</p>
+
+### Add Product
+
+The functionality for adding a product to the store can be accessed from clicking the account dropdown and selecting **Product Management**. This will display a form in which an admin can enter information and upload images to add a new product to the store.
+
+<p align="center">
+    <img src="documentation/features/add-product.png"/>
+</p>
+
+### Edit Product
+
+To edit a product, site admins can click the aforementioned edit button and the product form will display prepopulated will the information pertaining to the specific product. An info message will appear informing the admin that they are editing a product. The admin can change any aspect of the products information and save the changes to the live site when finished.
+
+<p align="center">
+    <img src="documentation/features/edit-product.png"/>
+</p>
+
+### Deleting a Product
+
+If an admin wants to delete a product they can select the delete button on the product or product detail pages. When the delete button is clicked, a modal will appear asking for confirmation that the user does actually want to delete the product in question. This prevents the user from accidentally deleting an incorrect product.
+
+<p align="center">
+    <img src="documentation/features/delete-modal.png"/>
+</p>
