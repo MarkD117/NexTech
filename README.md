@@ -1,4 +1,4 @@
-# Nextech - Your Source for Premium Computer Components and Systems
+# Nextech
 
 Welcome to Nextech, where we specialize in providing high-quality computer components and fully built systems tailored to meet your needs. Whether you're a gamer seeking top-tier hardware or a professional in search of reliable office setups and laptops, Nextech offers a diverse range of products to elevate your computing experience. From CPUs and GPUs to custom-built gaming PCs and office workstations, we prioritize quality, performance, and customer satisfaction. Explore our catalog and take the next step in enhancing your computing journey with Nextech.
 
@@ -1225,3 +1225,9 @@ This can be accomplished by the following steps:
 | [Very Academy](https://www.youtube.com/watch?v=OgA0TTKAtqQ&t) | wishlist inspiration |
 | [StackOverflow](https://stackoverflow.com/questions/59341177/can-i-use-javascript-to-add-or-remove-attributes-from-a-video-tag) | Video attribute validation fix |
 | [Code Institute](https://codeinstitute.net/ie/) | Portfolio Project 5 Course Content |
+
+## Acknowledgements 
+
+I would like to thank my mentor Chris Quinn for all of his help and assistance. I would also like my cohort mentor Alan Bushell, the Code Institute tutor support team and the Slack community.
+
+[Back to top ⇧](#nextech)
