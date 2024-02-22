@@ -571,3 +571,17 @@ If an admin wants to delete a product they can select the delete button on the p
 <p align="center">
     <img src="documentation/features/delete-modal.png"/>
 </p>
+
+## Future Features
+
+### Dedicated Forum
+
+As the forums feature was initially discarded, I am interested in the addition of a dedicated forums section on the website in the future. This forums feature will serve as a platform where users can ask questions, seek advice, share experiences, and discuss all things related to computers. Whether it's troubleshooting errors, seeking recommendations for components or builds, or simply sharing knowledge and insights, users will have the opportunity to engage with a community of fellow enthusiasts. Additionally, users will be able to interact with each other by replying to posts and upvoting helpful contributions, facilitating the discovery of the most valuable and useful content.
+
+### Stock Availability
+
+As previously mentioned, the 'stock' tag currently serves as a cosmetic addition to the site's features. However, in future plans, I aim to enhance this functionality significantly. I would like to implement a feature that prevents users from adding out-of-stock products to their cart, thereby mitigating potential disappointment caused by long shipping times due to unavailability. Additionally, I plan to prompt users to add out-of-stock items to their wishlist. Subsequently, when these items are restocked, users will receive email notifications, ensuring they are promptly informed. This proposed enhancement not only provides functionality to the 'stock' tag but also gives it practical significance, enhancing the overall user experience.
+
+### Buy Now Button
+
+This subtle yet intuitive feature was discussed in the section on [incomplete users stories](#incomplete-user-stories) within the readme. While it wasn't integrated initially, as it was perceived as non-essential to the site's core functionality, I believe it could serve as a valuable addition to enrich the user experience. The proposed button would be strategically placed on each product detail page, offering users a convenient shortcut directly to the checkout page for a specific item. This streamlined approach aims to expedite the purchasing process, particularly for users intending to buy only one item.
