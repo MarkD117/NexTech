@@ -584,4 +584,28 @@ As previously mentioned, the 'stock' tag currently serves as a cosmetic addition
 
 ### Buy Now Button
 
-This subtle yet intuitive feature was discussed in the section on [incomplete users stories](#incomplete-user-stories) within the readme. While it wasn't integrated initially, as it was perceived as non-essential to the site's core functionality, I believe it could serve as a valuable addition to enrich the user experience. The proposed button would be strategically placed on each product detail page, offering users a convenient shortcut directly to the checkout page for a specific item. This streamlined approach aims to expedite the purchasing process, particularly for users intending to buy only one item.
+This subtle yet intuitive feature was discussed in the section on [incomplete users stories](#incompleted-user-stories) within the readme. While it wasn't integrated initially, as it was perceived as non-essential to the site's core functionality, I believe it could serve as a valuable addition to enrich the user experience. The proposed button would be strategically placed on each product detail page, offering users a convenient shortcut directly to the checkout page for a specific item. This streamlined approach aims to expedite the purchasing process, particularly for users intending to buy only one item.
+
+## Technologies Used
+
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) was used to create the structure of the webpages and the base templating language.
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) was used to add custom styles when designing and styling the layout of the site.
+- [Python3](https://en.wikipedia.org/wiki/Python_(programming_language)) was used to create the logic for the project.
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) used to add timeout function for messages
+- [Django](https://www.djangoproject.com/) framework used to build the entire project.
+- [Bootstrap v4.6.2](https://getbootstrap.com/docs/4.6/getting-started/introduction/) used as a base front end framework that works alongside Django.
+- [Font Awesome](https://fontawesome.com/) used to include icons on the site.
+- [Jinja Templating with Django](https://docs.djangoproject.com/en/4.2/topics/templates/#support-for-template-engines) used to render the logic within the html files and make the website more dynamic.
+- [Lucid Chart](https://www.lucidchart.com/) used to database structure model.
+- [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) used to control the rendering behaviour of the django forms.
+- [ElephantSQL](https://www.elephantsql.com/) used as a PostgreSQL database for the project during development and in production.
+- [Git](https://www.atlassian.com/git/tutorials/what-is-git) used for version control.
+- [GitHub](https://github.com/) used to store site source code.
+- [GitPod](https://gitpod.io/) used as a cloud-based IDE for developing the site.
+- [Heroku](https://id.heroku.com/) used to deploy the project.
+- [Gunicorn](https://gunicorn.org/) used for WSGI server.
+- [Allauth](https://docs.allauth.org/en/latest/) used for user authentication system.
+- [AWS S3](https://aws.amazon.com/) used for hosting static & media files.
+- [AWS IAM](https://aws.amazon.com/) used for permissions based roles for accessing the S3 buckets.
+- [Stripe](https://stripe.com/) used for processing payment and webhooks.
+- [XML-Sitemaps](https://www.xml-sitemaps.com/) used for generating sitemap.
