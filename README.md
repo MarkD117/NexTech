@@ -11,6 +11,8 @@ The live project can be accessed [here](https://nextech-5db9177526a4.herokuapp.c
 ## Index – Table of Contents
 
 * [UI/UX](#uiux)
+* [Business Model](#business-model)
+* [SEO](#seo)
 * [Agile Development](#agile-development)
 * [User Stories](#user-stories)
 * [Database Structure](#database-structure)
