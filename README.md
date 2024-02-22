@@ -113,6 +113,34 @@ Nextech caters to a broad spectrum of tech-savvy individuals ranging from avid g
 - Paid Advertising: Explore avenues like Google Ads and Facebook Ads to target our demographic effectively.
 - Influencer Collaborations: Partner with influencers in the tech niche to promote our products and drive traffic to the site. Targeting micro-influencers with a following of at least 10,000 is a feasible strategy within our budget constraints.
 
+## SEO
+
+### SEO Project Planning
+
+Once the business model was decided on as an a computer parts store I started working on how to market the site and what keywords to target. I utilised [Google Trends](https://trends.google.com/trends/) to find more popular search terms and also used a tool called [SEOquake](https://chromewebstore.google.com/detail/seoquake/akdgnmcogleenhbclghghlkkdndkjdjc?pli=1) to compare the competition and see what they are doing well. I checked for a number of keywords on [Wordtracker](https://www.wordtracker.com/) to gain helpful insights on what keywords were high in traffic and competitive. From there I developed a list of short tail and long tail keywords I intended to use in this project.
+
+### Keywords
+
+Short Tail - Computer Components, Gaming PCs, Office PCs, Laptops, Computer Store, Tech Shop, Laptop Computers, Notebook PCs, Computer Accessories, Tech Deals, Computer Hardware, PC Components, Gaming Gear, Desktop PCs, Laptop Deals, Electronics Store, Computer Accessories, Tech Gadgets, Custom PCs, Computer Peripherals.
+
+Long Tail - High-performance Gaming PC, High-end Gaming Desktop PCs, Budget Gaming Laptop Deals, Best Laptop Computers for Students, Gaming PC Accessories Bundle, Custom Gaming PC Configurator Tool, Gaming Laptop with RTX Graphics, Business Desktop PC with SSD, Lightweight Ultrabooks for Travel, Budget-Friendly PC Components and Accessories.
+
+### Sitemap.xml
+
+I generated a sitemap for the site using [XML-Sitemaps](https://www.xml-sitemaps.com/) to ensure effective indexing by search engines like Google once it's ready
+
+### Robots.txt
+
+I created a robots.txt file to guide Google's crawling process on the site. Specifically, I've disallowed the accounts and cart URLs since they hold no relevance for Google's indexing purposes. Additionally, I've included the sitemap in the robots.txt file for easy reference.
+
+### FaceBook Business Page
+
+Given the possibility of the Facebook Business page being removed due to the company not being recognized as legitimate, I chose to create a mockup of the Facebook Page using [Balsamiq](https://balsamiq.com/wireframes). Below, you'll find a preview of what the NexTech Facebook page would include.
+
+<p align="center">
+    <img src="documentation/wireframes/nextech-facebook.png"/>
+</p>
+
 ## Agile Development
 
 Launching this project alongside a GitHub Projects Page was a strategic decision aimed at effectively measuring and managing the anticipated workload. The primary objective was to outline the projected workload, identify key epics, and subsequently break them down into actionable user stories or bite-sized tasks. This approach allowed for a systematic approach to project management, ensuring clarity of goals and progress tracking throughout the development process.
