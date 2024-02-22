@@ -780,3 +780,7 @@ The solution for the form to be displayed on all pages was to actually manually 
     </div>
 </form>
 ```
+
+## Known Bugs
+
+There are currently no known bugs with the site.
