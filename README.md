@@ -70,6 +70,48 @@ This font was sourced from [Google Fonts](https://fonts.google.com/).
 
 Icons sourced from [Font Awesome](https://fontawesome.com/).
 
+## Business Model
+
+### Business Overview
+
+Nextech is a dynamic B2C e-commerce platform specializing in computer components and fully built systems. Our mission is to deliver high-quality, cutting-edge products to our customers through an intuitive online store. With a diverse range of products, spanning from affordable computer components to premium gaming systems, Nextech aims to cater to tech enthusiasts of all levels.
+
+### Key Advantages
+
+- Scalability: The online nature of the business allows for easy scalability as it grows.
+- Global Reach: With no need for a physical location, it can reach customers worldwide.
+- Niche Targeting: Nextech can focus on specific niches within the tech industry, fostering brand loyalty and resonance with its target audience.
+- Cost Efficiency: Starting up is relatively low-cost, allowing for a greater budget allocation to customer acquisition strategies like advertising and marketing.
+- Impulse Buying: NexTechs competitive pricing encourages impulse buying, appealing to customers considering a purchase.
+
+### Challeneges
+
+- Initial Customer Acquisition: Competition saturation in certain sectors can pose challenges in attracting initial customers.
+- Brand Establishment: Building a brand from scratch requires time and a robust marketing strategy for effective results.
+- Marketing Efforts: Getting more visitors to the site naturally requires actively promoting it or investing in paid ads.
+- Trust Building: Lack of physical presence can make it challenging to build trust and loyalty without offering discounts or incentives.
+- Order Volume: Given that some products are at a high price point, it could be challenging to persuade customers to make purchases due to the higher upfront cost.
+
+### Site Users
+
+Nextech caters to a broad spectrum of tech-savvy individuals ranging from avid gamers and DIY enthusiasts to professionals and students, all seeking reliable and high-quality computing solutions tailored to their unique requirements. Generally the demographic of target site users of Nextech are primarly tech and computer enthusiasts between the ages of 18-50.
+
+### Goals
+
+- Seamless Navigation: Provide an easy-to-navigate website with a clear purpose.
+- Product Satisfaction: Offer products that meet users' expectations in terms of quality and functionality.
+- Enhancing Customer Engagement: Aim to foster meaningful interactions and relationships with site visitors by encouraging participation in community forums.
+- Convenient Checkout: Allow for quick and hassle-free checkout experiences.
+- User Profiles: Enable users to create profiles to view past orders and update account information.
+
+### Marketing Strategy
+
+- Social Media Promotion: Leverage Facebook business page for promotion and engage friends and family for wider reach.
+- Launch Sale: Initiate a soft online launch sale to drive early adoption and purchases.
+- Email Marketing: Utilize the in built newsletter sign up to build a subscriber base and send out offers and promotions.
+- Content Marketing: Create meaningful forum posts to boost SEO ranking and enhance visibility on search engines.
+- Paid Advertising: Explore avenues like Google Ads and Facebook Ads to target our demographic effectively.
+- Influencer Collaborations: Partner with influencers in the tech niche to promote our products and drive traffic to the site. Targeting micro-influencers with a following of at least 10,000 is a feasible strategy within our budget constraints.
 
 ## Agile Development
 
